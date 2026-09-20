@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>ASTS Ganjil Bahasa Indonesia Kelas IX - CBT Aman & Terkunci</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      overscroll-behavior-y: none;
+    }
+    .font-mono-num {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    * {
+      -webkit-touch-callout: none;
+    }
+    @keyframes siren-flash {
+      0%, 100% { background-color: rgba(220, 38, 38, 0.95); }
+      50% { background-color: rgba(153, 27, 27, 0.98); }
+    }
+    .siren-danger-overlay {
+      animation: siren-flash 0.8s infinite;
+    }
+    /* Scrollbar Halus */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col justify-between antialiased selection:bg-none">
+
+  <header class="bg-gradient-to-r from-blue-950 via-indigo-900 to-blue-900 text-white shadow-lg sticky top-0 z-30 border-b border-indigo-950/50">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between">
+      <div class="flex items-center space-x-2.5 sm:space-x-3">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/10 p-1 border border-white/20 flex items-center justify-center flex-shrink-0 shadow-inner overflow-hidden">
+          <img src="https://i.imgur.com/0kwowtD.png" alt="Logo Sekolah" 
+            onerror="this.onerror=null; this.src='https://placehold.co/80x80/1e1b4b/f8fafc?text=SMP';" 
+            class="w-full h-full object-contain">
+        </div>
+        <div>
+          <h1 class="text-sm sm:text-base md:text-lg font-black tracking-tight leading-tight flex items-center gap-1.5 sm:gap-2">
+            <span>ASTS GANJIL B. INDONESIA</span>
+            <span class="bg-amber-400 text-slate-950 text-[10px] sm:text-xs px-2 py-0.5 rounded-full font-black uppercase tracking-wider">Kelas IX</span>
+          </h1>
+          <p class="text-[11px] sm:text-xs text-indigo-200 hidden xs:block">Sistem Asesmen Terkunci Anti-Curang & Terhubung Spreadsheet</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <div id="badgeHonestyStatus" class="hidden items-center gap-1.5 px-3 py-1 bg-emerald-500/20 text-emerald-300 border border-emerald-400/40 rounded-full text-xs font-bold">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          <span id="badgeHonestyText">Status: Jujur</span>
+        </div>
+
+        <button id="btnOpenSheetModal" type="button" title="Buka dan Salin Kode Google Apps Script (GS)" class="px-3 py-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black rounded-lg transition text-xs flex items-center gap-1.5 shadow-sm">
+          <svg class="w-4 h-4 text-indigo-950" fill="currentColor" viewBox="0 0 20 20"><path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"/></svg>
+          <span>Kode GS Sheet</span>
+        </button>
+
+        <button id="btnOpenTeacherSettings" type="button" title="Pengaturan Guru & Link Webhook" class="p-2 bg-indigo-800/80 hover:bg-indigo-700 text-indigo-100 rounded-lg text-xs flex items-center gap-1 border border-indigo-700">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span class="hidden sm:inline">Pengawas</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow max-w-7xl w-full mx-auto px-3 sm:px-6 py-4 sm:py-6 flex flex-col justify-center items-center">
+
+    <!-- ================================================================= -->
+    <!-- 1. TAHAP REGISTRASI SISWA SESUAI PRESENSI (WAJIB HURUF KAPITAL)  -->
+    <!-- ================================================================= -->
+    <div id="sectionRegistration" class="w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-slate-200/90 overflow-hidden transition-all duration-300">
+      <div class="bg-gradient-to-br from-indigo-900 via-blue-900 to-indigo-800 p-6 sm:p-7 text-white relative">
+        <div class="flex items-center justify-between gap-4">
+          <div>
+            <span class="inline-block bg-amber-400 text-indigo-950 text-xs font-black uppercase tracking-wider px-3 py-1 rounded-md mb-2 shadow-sm">
+              Asesmen Tengah Semester Ganjil
+            </span>
+            <h2 class="text-xl sm:text-2xl font-black tracking-tight">Presensi Masuk Peserta Ujian</h2>
+            <p class="text-indigo-200 text-xs sm:text-sm mt-1">Lengkapi data pribadi dengan cermat dan junjung tinggi integritas.</p>
+          </div>
+          <div class="hidden xs:flex w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/10 p-1.5 items-center justify-center border border-white/25 shadow overflow-hidden flex-shrink-0">
+            <img src="https://i.imgur.com/0kwowtD.png" alt="Logo Sekolah" 
+              onerror="this.onerror=null; this.src='https://placehold.co/100x100/1e1b4b/f8fafc?text=SMP';" 
+              class="w-full h-full object-contain">
+          </div>
+        </div>
+      </div>
+
+      <form id="formRegistration" class="p-5 sm:p-8 space-y-5">
+        <!-- Peringatan Huruf Kapital & Integritas -->
+        <div class="p-4 bg-amber-50/90 border-l-4 border-amber-500 rounded-r-2xl flex items-start gap-3">
+          <svg class="w-6 h-6 text-amber-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+          <div class="text-xs sm:text-sm text-amber-950 leading-relaxed font-medium">
+            <strong class="font-extrabold text-amber-900 block mb-0.5">PERATURAN PENGISIAN & UJIAN:</strong>
+            1. Nama siswa <span class="underline font-bold">WAJIB SESUAI PRESENSI</span> dan menggunakan <span class="underline font-bold">HURUF KAPITAL</span> (otomatis dikunci CAPS LOCK).<br>
+            2. Ponsel/Laptop otomatis terkunci layar penuh. Dilarang berpindah aplikasi, membuka tab lain, atau menyembunyikan browser. Jika melanggar, <span class="text-rose-700 font-bold">sirine alarm akan berbunyi kencang</span> dan tercatat langsung di spreadsheet guru!
+          </div>
+        </div>
+
+        <div>
+          <label for="inputStudentName" class="block text-xs sm:text-sm font-black text-slate-700 uppercase tracking-wide mb-1.5">
+            Nama Lengkap Siswa <span class="text-rose-600">* (Wajib Huruf Kapital Sesuai Presensi)</span>
+          </label>
+          <div class="relative">
+            <input type="text" id="inputStudentName" required autocomplete="off" placeholder="CONTOH: MUHAMMAD RIZKY PRATAMA"
+              class="w-full px-4 py-3.5 rounded-xl border-2 border-slate-200 focus:border-indigo-600 focus:ring-4 focus:ring-indigo-100 outline-none uppercase font-bold text-slate-800 text-sm sm:text-base tracking-wide transition placeholder:font-normal placeholder:normal-case">
+            <span class="absolute right-3.5 top-3.5 px-2 py-0.5 text-[11px] font-black tracking-wider text-slate-500 bg-slate-100 rounded border border-slate-200">KAPITAL</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="selectStudentClass" class="block text-xs sm:text-sm font-black text-slate-700 uppercase tracking-wide mb-1.5">
+              Pilih Kelas IX <span class="text-rose-600">*</span>
+            </label>
+            <select id="selectStudentClass" required class="w-full px-4 py-3.5 rounded-xl border-2 border-slate-200 focus:border-indigo-600 focus:ring-4 focus:ring-indigo-100 outline-none font-bold text-slate-800 text-sm sm:text-base transition bg-white cursor-pointer">
+              <option value="" disabled selected>-- Pilih Kelas IX --</option>
+              <option value="IX-A">IX - A</option>
+              <option value="IX-B">IX - B</option>
+              <option value="IX-C">IX - C</option>
+              <option value="IX-D">IX - D</option>
+              <option value="IX-E">IX - E</option>
+              <option value="IX-F">IX - F</option>
+              <option value="IX-G">IX - G</option>
+              <option value="IX-H">IX - H</option>
+              <option value="IX-I">IX - I</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="inputAbsen" class="block text-xs sm:text-sm font-black text-slate-700 uppercase tracking-wide mb-1.5">
+              Nomor Presensi / Absen <span class="text-rose-600">*</span>
+            </label>
+            <input type="number" id="inputAbsen" min="1" max="50" required placeholder="1 - 45"
+              class="w-full px-4 py-3.5 rounded-xl border-2 border-slate-200 focus:border-indigo-600 focus:ring-4 focus:ring-indigo-100 outline-none font-bold text-slate-800 text-sm sm:text-base transition">
+          </div>
+        </div>
+
+        <div>
+          <label for="inputSchoolName" class="block text-xs sm:text-sm font-black text-slate-700 uppercase tracking-wide mb-1.5">
+            Nama Sekolah
+          </label>
+          <input type="text" id="inputSchoolName" value="SMP NEGERI" placeholder="NAMA SEKOLAH"
+            class="w-full px-4 py-3.5 rounded-xl border-2 border-slate-200 focus:border-indigo-600 focus:ring-4 focus:ring-indigo-100 outline-none uppercase font-bold text-slate-800 text-sm sm:text-base transition">
+        </div>
+
+        <!-- Spesifikasi Ujian 65 Menit & 40 Soal -->
+        <div class="rounded-2xl bg-gradient-to-r from-slate-50 to-blue-50/50 p-4 border border-slate-200 text-xs text-slate-700 space-y-2">
+          <div class="font-black text-slate-900 flex items-center gap-1.5 text-sm">
+            <svg class="w-4 h-4 text-indigo-700" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+            Informasi Asesmen:
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center pt-1 font-semibold">
+            <div class="bg-white p-2 rounded-xl border border-slate-200">
+              <span class="text-[10px] text-slate-500 block uppercase">Alokasi Waktu</span>
+              <span class="text-indigo-700 font-extrabold text-sm">65 Menit</span>
+            </div>
+            <div class="bg-white p-2 rounded-xl border border-slate-200">
+              <span class="text-[10px] text-slate-500 block uppercase">Jumlah Soal</span>
+              <span class="text-indigo-700 font-extrabold text-sm">40 Butir</span>
+            </div>
+            <div class="bg-white p-2 rounded-xl border border-slate-200">
+              <span class="text-[10px] text-slate-500 block uppercase">Bobot Soal</span>
+              <span class="text-indigo-700 font-extrabold text-sm">1 Poin / Soal</span>
+            </div>
+            <div class="bg-white p-2 rounded-xl border border-slate-200">
+              <span class="text-[10px] text-slate-500 block uppercase">Skor Maksimal</span>
+              <span class="text-emerald-700 font-extrabold text-sm">40 (Nilai 100)</span>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="w-full py-4 rounded-2xl bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-800 hover:from-blue-800 hover:to-indigo-900 text-white font-black text-base sm:text-lg shadow-xl shadow-indigo-200/80 transition-all transform active:scale-[0.98] flex items-center justify-center gap-2.5">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          <span>KUNCI GAWAI & MASUK UJIAN</span>
+        </button>
+      </form>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- 2. TAHAP ARENA UJIAN (EXAM ARENA - TERKUNCI FULLSCREEN)          -->
+    <!-- ================================================================= -->
+    <div id="sectionExamArena" class="hidden w-full max-w-7xl grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6 items-start">
+      
+      <aside class="lg:col-span-1 space-y-4 order-2 lg:order-1">
+        <!-- Kartu Timer & Catatan Kecurangan -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-4 sm:p-5">
+          <div class="flex items-center justify-between text-xs font-black text-slate-500 uppercase tracking-wider mb-1">
+            <span>Sisa Waktu</span>
+            <span class="bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded font-mono font-bold">65:00</span>
+          </div>
+          <div id="timerDisplayBox" class="font-mono-num text-3xl sm:text-4xl font-black text-indigo-800 tracking-tight flex items-center justify-between">
+            <span id="timerText">65:00</span>
+            <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-lg">Mundur</span>
+          </div>
+
+          <!-- Pelanggaran Box -->
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+            <div>
+              <div class="text-xs font-black text-slate-600">Pelanggaran Keluar:</div>
+              <div class="text-[11px] text-slate-400">Pindah tab/jendela layar</div>
+            </div>
+            <div id="badgeViolationCount" class="text-base font-black px-3 py-1 rounded-xl bg-emerald-100 text-emerald-800 font-mono-num transition-all">
+              0x
+            </div>
+          </div>
+        </div>
+
+        <!-- Kartu Identitas Siswa Mini -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-4">
+          <div class="text-[11px] font-black text-slate-400 uppercase tracking-wider mb-1">Peserta Terdaftar</div>
+          <div id="sideStudentName" class="font-extrabold text-slate-900 text-sm truncate uppercase">NAMA SISWA</div>
+          <div class="flex items-center gap-2 mt-1 text-xs text-slate-600 font-semibold">
+            <span id="sideStudentClass" class="bg-indigo-50 text-indigo-800 px-2 py-0.5 rounded border border-indigo-100 font-bold">IX-A</span>
+            <span>Absen: <strong id="sideStudentAbsen" class="text-slate-800 font-mono">1</strong></span>
+          </div>
+        </div>
+
+        <!-- Kisi Navigasi Soal (1 - 40) -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-4 sm:p-5">
+          <div class="flex items-center justify-between mb-3">
+            <div class="text-xs font-black text-slate-700 uppercase tracking-wider">Navigasi 40 Soal</div>
+            <span id="counterAnswered" class="text-xs font-black text-indigo-600">0 / 40 Terjawab</span>
+          </div>
+
+          <div id="gridQuestionButtons" class="grid grid-cols-5 gap-1.5 sm:gap-2 max-h-64 sm:max-h-72 overflow-y-auto pr-1">
+            <!-- 40 Tombol Dibuat Melalui JS -->
+          </div>
+
+          <!-- Legenda Warna -->
+          <div class="mt-4 pt-3 border-t border-slate-100 grid grid-cols-2 gap-2 text-[11px] text-slate-500 font-bold">
+            <div class="flex items-center gap-1.5">
+              <span class="w-3 h-3 rounded bg-indigo-600 inline-block"></span> Sudah Dijawab
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="w-3 h-3 rounded bg-amber-400 inline-block"></span> Ragu-Ragu
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="w-3 h-3 rounded bg-slate-100 border border-slate-300 inline-block"></span> Belum Dijawab
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="w-3 h-3 rounded-full bg-purple-500 inline-block"></span> Kompleks / Tabel
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <section class="lg:col-span-3 order-1 lg:order-2 space-y-4">
+        <div class="bg-white rounded-3xl shadow-sm border border-slate-200 p-5 sm:p-8 min-h-[520px] flex flex-col justify-between">
+          <div>
+            <!-- Header Kartu Soal -->
+            <div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-slate-200 mb-5">
+              <div class="flex items-center gap-2 sm:gap-3">
+                <span id="badgeActiveNumber" class="text-xs font-black text-white bg-indigo-700 px-3.5 py-1.5 rounded-xl tracking-wider">
+                  SOAL NO. 1
+                </span>
+                <span id="badgeActiveCategory" class="text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 border border-slate-200">
+                  Teks LHO
+                </span>
+              </div>
+
+              <div class="flex items-center gap-2">
+                <button type="button" id="btnToggleDoubt" class="px-3 py-1.5 rounded-xl border text-xs font-black transition flex items-center gap-1.5 border-slate-300 text-slate-600 bg-slate-50 hover:bg-slate-100">
+                  <span id="iconDoubt">🏳️</span>
+                  <span id="textDoubt">Tandai Ragu-Ragu</span>
+                </button>
+                <span class="text-xs font-extrabold text-slate-400 bg-slate-50 px-2 py-1 rounded-lg border border-slate-200">1 Poin</span>
+              </div>
+            </div>
+
+            <!-- Teks Stimulus dan Pertanyaan Soal -->
+            <div id="activeQuestionBody" class="space-y-3.5 text-slate-800 leading-relaxed text-sm sm:text-base font-normal">
+              <!-- Render stimulus bacaan & pertanyaan disini -->
+            </div>
+
+            <!-- Kontainer Input Jawaban (Pilihan Ganda, Kompleks, atau Tabel) -->
+            <div id="activeOptionsContainer" class="mt-6 space-y-3">
+              <!-- Render opsi jawaban dinamis -->
+            </div>
+          </div>
+
+          <div class="pt-6 mt-8 border-t border-slate-200 flex items-center justify-between gap-2 sm:gap-4">
+            <button type="button" id="btnPrevQuestion" class="px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl border border-slate-300 hover:bg-slate-100 text-slate-700 font-black text-xs sm:text-sm transition flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+              <span>Sebelumnya</span>
+            </button>
+
+            <button type="button" id="btnConfirmFinish" class="px-5 sm:px-7 py-2.5 sm:py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs sm:text-sm shadow-md transition flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              <span>Selesai & Kirim</span>
+            </button>
+
+            <button type="button" id="btnNextQuestion" class="px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs sm:text-sm shadow transition flex items-center gap-2">
+              <span>Berikutnya</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- 3. TAHAP SELESAI / HASIL REKAP NILAI & SINKRONISASI             -->
+    <!-- ================================================================= -->
+    <div id="sectionExamResult" class="hidden w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden text-center p-6 sm:p-10 space-y-6">
+      <div class="w-20 h-20 mx-auto rounded-3xl bg-emerald-100 text-emerald-600 flex items-center justify-center shadow-inner">
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+      </div>
+
+      <div>
+        <span class="text-xs font-black uppercase tracking-widest text-emerald-700 bg-emerald-100 px-3.5 py-1.5 rounded-full">
+          Asesmen Selesai Terverifikasi
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2">Terima Kasih Atas Kejujuran Anda!</h2>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1">Seluruh berkas jawaban telah dihitung dan dilaporkan ke database guru.</p>
+      </div>
+
+      <!-- Kartu Hasil Nilai -->
+      <div class="bg-gradient-to-br from-slate-900 via-indigo-950 to-blue-950 text-white rounded-3xl p-6 sm:p-7 shadow-xl text-left relative overflow-hidden border border-slate-800">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="text-[11px] text-indigo-300 font-bold uppercase tracking-wider">Identitas Peserta</div>
+            <div id="resStudentName" class="text-lg sm:text-xl font-black text-white tracking-wide uppercase">MUHAMMAD RIZKY</div>
+            <div class="text-xs text-slate-300 mt-1 font-semibold">
+              Kelas: <span id="resStudentClass" class="text-amber-300 font-bold">IX-A</span> | No. Absen: <span id="resStudentAbsen" class="text-amber-300 font-bold">1</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-[11px] text-slate-300 font-bold uppercase">Total Benar</div>
+            <div class="text-3xl sm:text-4xl font-black text-amber-400 font-mono-num">
+              <span id="resScoreCorrect">40</span><span class="text-lg text-slate-300 font-normal"> / 40</span>
+            </div>
+            <span class="text-[10px] text-slate-400 block mt-0.5">(1 Poin per Soal Benar)</span>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+          <div>
+            <div class="text-xs text-indigo-300 font-bold uppercase">Nilai Akhir (Skala 100)</div>
+            <div id="resFinalScore" class="text-4xl sm:text-5xl font-black text-white font-mono-num tracking-tight">100.0</div>
+          </div>
+          <div class="text-right">
+            <div class="text-xs text-indigo-300 font-bold uppercase">Integritas Ujian</div>
+            <div id="resHonestyTag" class="text-xs font-black px-3 py-1.5 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 inline-block mt-1">
+              0 Pelanggaran (Sangat Jujur)
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Status Sinkronisasi Google Sheets -->
+      <div id="syncStatusBox" class="p-3.5 bg-slate-50 rounded-2xl text-xs text-slate-700 border border-slate-200 flex items-center justify-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+        <span id="syncStatusText">Data tersinkronisasi otomatis ke Google Spreadsheet Pengawas.</span>
+      </div>
+
+      <!-- Aksi Unduh dan Cetak -->
+      <div class="flex flex-col sm:flex-row gap-3 pt-2">
+        <button type="button" id="btnDownloadCSV" class="flex-1 py-3 px-4 rounded-xl border-2 border-slate-200 hover:bg-slate-50 text-slate-800 font-black text-xs sm:text-sm transition flex items-center justify-center gap-2">
+          <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span>Unduh Rekap Nilai (.CSV)</span>
+        </button>
+        <button type="button" onclick="window.print()" class="flex-1 py-3 px-4 rounded-xl bg-indigo-700 hover:bg-indigo-800 text-white font-black text-xs sm:text-sm shadow transition flex items-center justify-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+          <span>Cetak Bukti Ujian (PDF)</span>
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="bg-white border-t border-slate-200 py-3 text-center text-xs text-slate-500 font-medium">
+    Asesmen Tengah Semester (ASTS) Ganjil Bahasa Indonesia Kelas IX SMP • Mengutamakan Kejujuran & Nilai Karakter
+  </footer>
+
+  <!-- ================================================================= -->
+  <!-- MODAL: PERINGATAN KECURANGAN & ALARM SIRINE DARURAT              -->
+  <!-- ================================================================= -->
+  <div id="modalViolation" class="hidden fixed inset-0 z-50 siren-danger-overlay backdrop-blur-md flex items-center justify-center p-4">
+    <div class="w-full max-w-md bg-white rounded-3xl p-6 sm:p-8 text-center space-y-4 shadow-2xl border-4 border-rose-600 animate-bounce-short">
+      <div class="w-20 h-20 mx-auto rounded-3xl bg-rose-100 text-rose-600 flex items-center justify-center shadow-inner">
+        <svg class="w-12 h-12 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+      </div>
+
+      <div class="space-y-1">
+        <h3 class="text-xl sm:text-2xl font-black text-rose-700 tracking-tight uppercase">PERINGATAN CURANG!</h3>
+        <p class="text-xs sm:text-sm font-bold text-slate-800 leading-snug">
+          Gawai Anda terdeteksi keluar dari tab ujian atau berpindah ke aplikasi lain!
+        </p>
+      </div>
+
+      <div class="p-3.5 bg-rose-50 rounded-2xl text-xs text-rose-950 border border-rose-200 text-left space-y-1 font-semibold">
+        <p>• Suara sirine alarm telah dibunyikan kencang.</p>
+        <p>• Rekaman pelanggaran otomatis tersimpan di Sheet Pengawas.</p>
+        <p>• Total Pelanggaran: <strong id="modalViolationNum" class="font-black text-rose-700 text-sm">1x</strong></p>
+      </div>
+
+      <button type="button" id="btnDismissViolation" class="w-full py-3.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-black text-sm uppercase tracking-wider shadow-lg transition transform active:scale-95">
+        SAYA MENGERTI & KEMBALI KE UJIAN
+      </button>
+    </div>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- MODAL: KONFIRMASI SELESAI UJIAN                                 -->
+  <!-- ================================================================= -->
+  <div id="modalConfirmSubmit" class="hidden fixed inset-0 z-40 bg-slate-900/70 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="w-full max-w-md bg-white rounded-3xl p-6 text-center space-y-4 shadow-2xl border border-slate-200">
+      <div class="w-14 h-14 mx-auto rounded-2xl bg-indigo-100 text-indigo-700 flex items-center justify-center">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      </div>
+      <h3 class="text-lg font-black text-slate-900">Kirim Seluruh Lembar Jawaban?</h3>
+      <p id="confirmSummaryText" class="text-xs sm:text-sm text-slate-600">
+        Anda telah menjawab 40 dari 40 butir soal. Setelah dikirim, jawaban tidak dapat diperbaiki.
+      </p>
+      
+      <div class="flex gap-3 pt-2">
+        <button type="button" id="btnCancelSubmit" class="flex-1 py-3 rounded-xl border border-slate-300 font-bold text-slate-700 hover:bg-slate-100 text-xs sm:text-sm">
+          Periksa Lagi
+        </button>
+        <button type="button" id="btnExecuteSubmit" class="flex-1 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs sm:text-sm shadow">
+          Ya, Kirim Sekarang
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- MODAL: PENGATURAN GURU & INTEGRASI GOOGLE SHEETS                 -->
+  <!-- ================================================================= -->
+  <div id="modalTeacherConfig" class="hidden fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="w-full max-w-2xl bg-white rounded-3xl p-6 space-y-5 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-200">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-indigo-100 text-indigo-800 flex items-center justify-center font-black">9</div>
+          <div>
+            <h3 class="font-black text-slate-900 text-base">Integrasi Google Sheet & Panel Pengawas</h3>
+            <p class="text-xs text-slate-500">Koneksi lembar nilai otomatis & rekam jejak kecurangan</p>
+          </div>
+        </div>
+        <button type="button" id="btnCloseTeacherConfig" class="text-slate-400 hover:text-slate-600 font-bold text-lg p-1">✕</button>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm">
+        <div>
+          <label class="block font-bold text-slate-800 mb-1">Google Apps Script Web App URL (Endpoint Spreadsheet)</label>
+          <input type="url" id="inputWebhookUrl" value="https://script.google.com/macros/s/AKfycbwmoQqEMn-3wqJKi99WDZi4Mioe_ci6p0xUjpYRHdRbA1v3TCEsSDqLuXl1xCVtPd8/exec"
+            placeholder="https://script.google.com/macros/s/.../exec"
+            class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-500 font-mono text-xs bg-slate-50 text-slate-900 font-medium">
+          <p class="text-[11px] text-emerald-600 font-bold mt-1">✓ Web App URL aktif. Jawaban, waktu, dan pelanggaran siswa langsung dikirim ke sheet.</p>
+        </div>
+
+        <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-2">
+          <div class="font-bold text-slate-800 flex items-center justify-between">
+            <span>Kode Apps Script untuk Google Sheet Bapak/Ibu Guru:</span>
+            <button type="button" id="btnCopyScript" class="text-xs text-indigo-600 hover:text-indigo-800 font-black underline">Salin Kode</button>
+          </div>
+          <p class="text-slate-600 text-xs">
+            Buka Google Sheet Bapak/Ibu Guru &gt; Menu <strong>Ekstensi</strong> &gt; <strong>Apps Script</strong> &gt; Tempel kode berikut &gt; <strong>Deploy</strong> sebagai Web App (Akses: <em>Anyone/Siapa saja</em>):
+          </p>
+          <textarea id="appsScriptCode" readonly class="w-full h-32 p-3 font-mono text-[11px] bg-slate-900 text-emerald-400 rounded-xl overflow-x-auto resize-none">
+function doPost(e) {
+  try {
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var sheet = ss.getActiveSheet();
+    if (sheet.getLastRow() === 0) {
+      sheet.appendRow([
+        "Waktu Selesai", "Nama Siswa", "Kelas", "Nomor Absen", "Sekolah",
+        "Total Benar (Dari 40)", "Nilai Skala 100", "Total Pelanggaran", "Rincian Pelanggaran"
+      ]);
+    }
+    var data = JSON.parse(e.postData.contents);
+    sheet.appendRow([
+      new Date(),
+      data.name,
+      data.studentClass,
+      data.absen,
+      data.school,
+      data.scoreCorrect,
+      data.finalScore,
+      data.violationCount,
+      data.violationDetails
+    ]);
+    return ContentService.createTextOutput(JSON.stringify({status: "success"}))
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch (err) {
+    return ContentService.createTextOutput(JSON.stringify({status: "error", message: err.toString()}))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+          </textarea>
+        </div>
+
+        <div class="flex items-center justify-between pt-2">
+          <button type="button" id="btnSaveConfig" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs shadow">
+            Simpan Konfigurasi URL
+          </button>
+          <span id="labelSaveAlert" class="text-xs text-emerald-600 font-bold hidden">Tersimpan dengan sukses!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* =========================================================================
+       BANK SOAL LENGKAP 40 BUTIR KELAS IX SESUAI DOKUMEN ASESMEN & KUNCI JAWABAN
+       Bobot 1 Poin per Soal (Maksimal 40 Poin = Nilai 100)
+       ========================================================================= */
+    const EXAM_QUESTIONS = [
+      // --- BAGIAN 1: TEKS LAPORAN HASIL OBSERVASI (LHO) Soal 1 - 10 ---
+      {
+        id: 1,
+        part: "Bagian 1: Teks LHO",
+        type: "single",
+        stimulus: "Perhatikan teks berikut!\n\nKunang-kunang merupakan jenis serangga yang dapat mengeluarkan cahaya yang jelas terlihat pada malam hari. Cahaya ini dihasilkan dari \"kotak cahaya\" di bagian bawah perut mereka. Spesies ini banyak ditemukan di ekosistem hutan mangrove yang memiliki tingkat kelembapan tinggi dan ketersediaan pakan yang melimpah. Di hutan mangrove, kunang-kunang berperan sebagai bioindikator kesehatan lingkungan karena mereka sangat sensitif terhadap polusi cahaya dan pestisida.",
+        text: "Paragraf tersebut dalam struktur teks LHO dikategorikan sebagai...",
+        options: [
+          { key: "A", text: "Deskripsi bagian" },
+          { key: "B", text: "Deskripsi manfaat" },
+          { key: "C", text: "Definisi umum" },
+          { key: "D", text: "Simpulan" }
+        ],
+        correct: ["C"]
+      },
+      {
+        id: 2,
+        part: "Bagian 1: Teks LHO",
+        type: "single",
+        stimulus: "Kutipan Teks:\n\n\"Di hutan mangrove, kunang-kunang berperan sebagai bioindikator kesehatan lingkungan karena mereka sangat sensitif terhadap polusi cahaya dan pestisida.\"",
+        text: "Kata \"bioindikator\" pada teks di atas merupakan kata teknis di bidang...",
+        options: [
+          { key: "A", text: "Geografi" },
+          { key: "B", text: "Biologi" },
+          { key: "C", text: "Fisika" },
+          { key: "D", text: "Sosiologi" }
+        ],
+        correct: ["B"]
+      },
+      {
+        id: 3,
+        part: "Bagian 1: Teks LHO",
+        type: "single",
+        stimulus: "Kutipan Teks:\n\n\"Kunang-kunang berperan sebagai bioindikator kesehatan lingkungan karena mereka sangat sensitif terhadap polusi cahaya dan pestisida.\"",
+        text: "Berdasarkan teks, manakah inferensi (kesimpulan tersirat) yang paling tepat mengenai keberadaan kunang-kunang?",
+        options: [
+          { key: "A", text: "Kunang-kunang hanya bisa hidup di pohon bakau yang tinggi." },
+          { key: "B", text: "Jika jumlah kunang-kunang berkurang, maka lingkungan tersebut kemungkinan tercemar polusi." },
+          { key: "C", text: "Semua jenis serangga malam sebenarnya bisa mengeluarkan cahaya jika berada di mangrove." },
+          { key: "D", text: "Kunang-kunang adalah satu-satunya hewan yang bisa mendeteksi pestisida." }
+        ],
+        correct: ["B"]
+      },
+      {
+        id: 4,
+        part: "Bagian 1: Teks LHO",
+        type: "single",
+        stimulus: "Perhatikan teks berikut!\n\nLidah buaya memiliki daun berdaging tebal yang berwarna hijau. Daunnya panjang, meruncing, dan pada bagian pinggirnya terdapat duri-duri kecil. Di dalam daun tersebut terdapat gel bening yang kaya akan nutrisi. Lidah buaya (Aloe vera) adalah tanaman yang tahan terhadap kekeringan karena mampu menyimpan cadangan air di dalam jaringannya.",
+        text: "Kalimat definisi dalam teks tersebut ditunjukkan oleh kalimat...",
+        options: [
+          { key: "A", text: "Lidah buaya memiliki daun berdaging tebal yang berwarna hijau." },
+          { key: "B", text: "Daunnya panjang, meruncing, dan pada bagian pinggirnya terdapat duri." },
+          { key: "C", text: "Di dalam daun tersebut terdapat gel bening yang kaya akan nutrisi." },
+          { key: "D", text: "Lidah buaya (Aloe vera) adalah tanaman yang tahan terhadap kekeringan karena mampu menyimpan cadangan air di dalam jaringannya." }
+        ],
+        correct: ["D"]
+      },
+      {
+        id: 5,
+        part: "Bagian 1: Teks LHO",
+        type: "single",
+        stimulus: "Kutipan Teks:\n\n\"Daunnya panjang, meruncing, dan pada bagian pinggirnya terdapat duri-duri kecil. Di dalam daun tersebut terdapat gel bening yang kaya akan nutrisi.\"",
+        text: "Bagian teks yang menjelaskan ciri fisik daun lidah buaya secara detail disebut...",
+        options: [
+          { key: "A", text: "Definisi umum" },
+          { key: "B", text: "Deskripsi bagian" },
+          { key: "C", text: "Deskripsi manfaat" },
+          { key: "D", text: "Pernyataan umum" }
+        ],
+        correct: ["B"]
+      },
+      {
+        id: 6,
+        part: "Bagian 1: Teks LHO",
+        type: "single",
+        stimulus: "Berdasarkan Teks Lidah Buaya:\n\n\"Lidah buaya memiliki daun berdaging tebal yang berwarna hijau. Daunnya panjang, meruncing, dan pada bagian pinggirnya terdapat duri-duri kecil.\"",
+        text: "Manakah pernyataan berikut yang merupakan fakta berdasarkan teks di atas?",
+        options: [
+          { key: "A", text: "Lidah buaya adalah tanaman tercantik di daerah kering." },
+          { key: "B", text: "Gel lidah buaya mungkin sangat enak dikonsumsi." },
+          { key: "C", text: "Lidah buaya memiliki duri kecil di pinggiran daunnya." },
+          { key: "D", text: "Semua orang harus menanam lidah buaya di rumah." }
+        ],
+        correct: ["C"]
+      },
+      {
+        id: 7,
+        part: "Bagian 1: Teks LHO",
+        type: "single",
+        stimulus: "Perhatikan teks berikut!\n\nTerumbu karang adalah sekumpulan hewan polip yang bersimbiosis dengan alga. Keberadaannya sangat penting bagi ekosistem laut karena menjadi tempat pemijahan ikan. Selain itu, terumbu karang berfungsi sebagai penahan ombak alami yang melindungi pantai dari abrasi. Secara ekonomi, terumbu karang merupakan daya tarik wisata bahari yang mampu meningkatkan pendapatan masyarakat pesisir.",
+        text: "Kalimat yang menunjukkan deskripsi manfaat adalah...",
+        options: [
+          { key: "A", text: "Terumbu karang adalah sekumpulan hewan polip." },
+          { key: "B", text: "Terumbu karang berfungsi sebagai penahan ombak alami untuk mencegah abrasi." },
+          { key: "C", text: "Hewan polip bersimbiosis dengan jenis alga tertentu." },
+          { key: "D", text: "Terumbu karang banyak ditemukan di perairan dangkal." }
+        ],
+        correct: ["B"]
+      },
+      {
+        id: 8,
+        part: "Bagian 1: Teks LHO",
+        type: "single",
+        stimulus: "Kutipan Teks:\n\n\"Terumbu karang adalah sekumpulan hewan polip yang bersimbiosis dengan alga.\"",
+        text: "Kata \"bersimbiosis\" merupakan verba material yang bermakna...",
+        options: [
+          { key: "A", text: "Cara kerja dua organisme yang saling memengaruhi atau bergantung." },
+          { key: "B", text: "Proses pembersihan karang secara alami." },
+          { key: "C", text: "Tindakan merusak lingkungan oleh makhluk hidup." },
+          { key: "D", text: "Keadaan di mana hewan laut tidur di dasar laut." }
+        ],
+        correct: ["A"]
+      },
+      {
+        id: 9,
+        part: "Bagian 1: Teks LHO",
+        type: "single",
+        stimulus: "Kutipan Teks:\n\n\"Terumbu karang berfungsi sebagai penahan ombak alami yang melindungi pantai dari abrasi. Secara ekonomi, terumbu karang merupakan daya tarik wisata bahari yang mampu meningkatkan pendapatan masyarakat pesisir.\"",
+        text: "Objek observasi dalam teks tersebut dilaporkan secara objektif. Hal ini dibuktikan dengan...",
+        options: [
+          { key: "A", text: "Penggunaan kata-kata yang memuji keindahan karang." },
+          { key: "B", text: "Penyampaian informasi berdasarkan fungsi dan ciri fisik yang dapat diuji." },
+          { key: "C", text: "Penulis memasukkan perasaan pribadinya saat melihat karang." },
+          { key: "D", text: "Teks tersebut berisi ajakan untuk menyelamatkan laut." }
+        ],
+        correct: ["B"]
+      },
+      {
+        id: 10,
+        part: "Bagian 1: Teks LHO",
+        type: "single",
+        stimulus: "Perhatikan teks terumbu karang di atas secara keseluruhan.",
+        text: "Simpulan yang tepat untuk teks di atas adalah...",
+        options: [
+          { key: "A", text: "Terumbu karang hanya bermanfaat bagi ikan-ikan kecil di laut." },
+          { key: "B", text: "Kelestarian terumbu karang sangat penting bagi ekologi maupun ekonomi." },
+          { key: "C", text: "Abrasi pantai hanya bisa dicegah dengan membangun tembok beton." },
+          { key: "D", text: "Masyarakat pesisir tidak membutuhkan terumbu karang untuk hidup." }
+        ],
+        correct: ["B"]
+      },
+
+      // --- BAGIAN 2: TEKS DISKUSI Soal 11 - 20 ---
+      {
+        id: 11,
+        part: "Bagian 2: Teks Diskusi",
+        type: "complex",
+        stimulus: "Teks Diskusi 1:\n\nPenggunaan gawai di sekolah terus menjadi perdebatan. Pihak yang mendukung berpendapat bahwa gawai mempermudah akses informasi dan literasi digital. Sebaliknya, pihak yang menentang mengkhawatirkan gangguan konsentrasi, potensi perundungan siber, dan ketergantungan pada teknologi yang mengurangi interaksi sosial siswa.",
+        text: "Berikan tanda centang pada pernyataan yang merupakan isu utama dalam teks tersebut (Jawaban lebih dari satu):",
+        options: [
+          { key: "A", text: "Manfaat gawai untuk meningkatkan nilai ujian nasional secara instan." },
+          { key: "B", text: "Pro dan kontra kebijakan penggunaan gawai di lingkungan sekolah." },
+          { key: "C", text: "Pengaruh teknologi terhadap kemampuan bersosialisasi siswa." },
+          { key: "D", text: "Harga gawai yang semakin murah di pasaran." }
+        ],
+        correct: ["B", "C"]
+      },
+      {
+        id: 12,
+        part: "Bagian 2: Teks Diskusi",
+        type: "matrix",
+        stimulus: "Berdasarkan Teks Diskusi 1 (Penggunaan Gawai di Sekolah):",
+        text: "Tentukan Benar atau Salah pernyataan mengenai argumen mendukung (pro) berdasarkan teks!",
+        matrixCols: ["Benar", "Salah"],
+        matrixRows: [
+          { id: "r1", text: "Gawai dapat digunakan sebagai sarana riset materi pelajaran." },
+          { id: "r2", text: "Gawai membuat siswa lebih fokus pada penjelasan guru di depan kelas." }
+        ],
+        correct: { r1: "Benar", r2: "Salah" }
+      },
+      {
+        id: 13,
+        part: "Bagian 2: Teks Diskusi",
+        type: "complex",
+        stimulus: "Berdasarkan Teks Diskusi 1 (Penggunaan Gawai di Sekolah):",
+        text: "Manakah yang termasuk argumen menentang (kontra) penggunaan gawai? (Jawaban lebih dari satu)",
+        options: [
+          { key: "A", text: "Siswa mungkin mengakses konten yang tidak edukatif saat jam pelajaran." },
+          { key: "B", text: "Gawai membantu guru mendistribusikan tugas secara digital." },
+          { key: "C", text: "Risiko terjadinya pelecehan atau ejekan melalui media sosial di sekolah." },
+          { key: "D", text: "Gawai dapat menggantikan fungsi buku cetak yang berat." }
+        ],
+        correct: ["A", "C"]
+      },
+      {
+        id: 14,
+        part: "Bagian 2: Teks Diskusi",
+        type: "matrix",
+        stimulus: "Berdasarkan Teks Diskusi 1 (Kohesi dan Koherensi):",
+        text: "Tentukan kesesuaian pernyataan berikut dengan kaidah kohesi dan koherensi teks!",
+        matrixCols: ["Sesuai", "Tidak Sesuai"],
+        matrixRows: [
+          { id: "r1", text: "Kata \"Sebaliknya\" digunakan untuk menghubungkan dua sudut pandang yang bertentangan." },
+          { id: "r2", text: "Kata \"Gawai\" dan \"Teknologi\" dalam teks tersebut tidak memiliki hubungan makna." }
+        ],
+        correct: { r1: "Sesuai", r2: "Tidak Sesuai" }
+      },
+      {
+        id: 15,
+        part: "Bagian 2: Teks Diskusi",
+        type: "single",
+        stimulus: "Mencari jalan keluar bijak untuk isu perdebatan penggunaan gawai di sekolah.",
+        text: "Solusi netral yang paling tepat untuk permasalahan di atas adalah...",
+        options: [
+          { key: "A", text: "Melarang total penggunaan gawai tanpa pengecualian." },
+          { key: "B", text: "Mengizinkan penggunaan gawai dengan regulasi dan pengawasan ketat untuk tujuan belajar." },
+          { key: "C", text: "Membiarkan siswa menggunakan gawai sebebas-bebasnya agar mandiri." },
+          { key: "D", text: "Mewajibkan orang tua membelikan gawai terbaru untuk semua siswa." }
+        ],
+        correct: ["B"]
+      },
+      {
+        id: 16,
+        part: "Bagian 2: Teks Diskusi",
+        type: "complex",
+        stimulus: "Teks Diskusi 2:\n\nKecerdasan Buatan (AI) kini merambah dunia pendidikan. Penggunaan AI seperti chatbot dianggap membantu siswa memahami konsep sulit dengan cepat. Namun, banyak pendidik khawatir AI akan mematikan kemampuan berpikir kritis dan kreativitas orisinal siswa jika digunakan untuk mengerjakan tugas secara instan.",
+        text: "Isu yang diangkat dalam teks diskusi tersebut adalah... (Jawaban lebih dari satu)",
+        options: [
+          { key: "A", text: "Dampak penggunaan AI terhadap kemampuan berpikir siswa." },
+          { key: "B", text: "Perkembangan teknologi robotika di industri manufaktur." },
+          { key: "C", text: "Efektivitas AI sebagai asisten belajar di sekolah." },
+          { key: "D", text: "Biaya berlangganan aplikasi AI yang mahal." }
+        ],
+        correct: ["A", "C"]
+      },
+      {
+        id: 17,
+        part: "Bagian 2: Teks Diskusi",
+        type: "matrix",
+        stimulus: "Berdasarkan Teks Diskusi 2 (Dampak Kecerdasan Buatan/AI):",
+        text: "Tentukan Benar atau Salah mengenai dampak negatif AI menurut teks!",
+        matrixCols: ["Benar", "Salah"],
+        matrixRows: [
+          { id: "r1", text: "AI dapat menyebabkan siswa malas melakukan riset mandiri." },
+          { id: "r2", text: "AI menjamin semua jawaban tugas sekolah menjadi 100% akurat." }
+        ],
+        correct: { r1: "Benar", r2: "Salah" }
+      },
+      {
+        id: 18,
+        part: "Bagian 2: Teks Diskusi",
+        type: "complex",
+        stimulus: "Berdasarkan Teks Diskusi 2 (Kecerdasan Buatan dalam Pendidikan):",
+        text: "Mengapa AI dianggap bermanfaat bagi siswa? (Jawaban lebih dari satu)",
+        options: [
+          { key: "A", text: "Memberikan penjelasan konsep yang sulit dipahami secara cepat." },
+          { key: "B", text: "Menghilangkan kebutuhan siswa untuk pergi ke sekolah." },
+          { key: "C", text: "Tersedia kapan saja untuk menjawab pertanyaan siswa." },
+          { key: "D", text: "Menjamin siswa langsung lulus ujian tanpa belajar." }
+        ],
+        correct: ["A", "C"]
+      },
+      {
+        id: 19,
+        part: "Bagian 2: Teks Diskusi",
+        type: "matrix",
+        stimulus: "Berdasarkan Teks Diskusi 2 (Aspek Kebahasaan):",
+        text: "Tentukan kesesuaian aspek kebahasaan pada teks tersebut!",
+        matrixCols: ["Sesuai", "Tidak Sesuai"],
+        matrixRows: [
+          { id: "r1", text: "Kata \"Namun\" berfungsi sebagai konjungsi antarkalimat pertentangan." },
+          { id: "r2", text: "Teks menggunakan bahasa subjektif yang memojokkan satu pihak secara kasar." }
+        ],
+        correct: { r1: "Sesuai", r2: "Tidak Sesuai" }
+      },
+      {
+        id: 20,
+        part: "Bagian 2: Teks Diskusi",
+        type: "single",
+        stimulus: "Merumuskan simpulan objektif pada teks diskusi kecerdasan buatan.",
+        text: "Simpulan yang bersifat jalan tengah (solusi) adalah...",
+        options: [
+          { key: "A", text: "AI harus dilarang dari semua perangkat milik siswa." },
+          { key: "B", text: "Siswa harus diajarkan menggunakan AI sebagai alat bantu, bukan pengganti proses berpikir." },
+          { key: "C", text: "Guru tidak perlu lagi memberikan tugas karena sudah ada AI." },
+          { key: "D", text: "AI hanya boleh digunakan oleh guru, tidak oleh siswa." }
+        ],
+        correct: ["B"]
+      },
+
+      // --- BAGIAN 3: IKLAN, SLOGAN, DAN POSTER Soal 21 - 30 ---
+      {
+        id: 21,
+        part: "Bagian 3: Iklan, Slogan, Poster",
+        type: "single",
+        stimulus: "Perhatikan ungkapan berikut:\n\n\"Satu Pohon untuk Masa Depan Bumi.\"",
+        text: "Ungkapan di atas lebih tepat dikategorikan sebagai...",
+        options: [
+          { key: "A", text: "Iklan Komersial" },
+          { key: "B", text: "Slogan" },
+          { key: "C", text: "Poster Niaga" },
+          { key: "D", text: "Iklan Permintaan" }
+        ],
+        correct: ["B"]
+      },
+      {
+        id: 22,
+        part: "Bagian 3: Iklan, Slogan, Poster",
+        type: "single",
+        stimulus: "Perhatikan deskripsi berikut:\n\nSebuah gambar menunjukkan keran air yang menetes, lalu ada tulisan besar \"HEMAT AIR, HEMAT NYAWA\".",
+        text: "Tujuan komunikatif dari media tersebut adalah...",
+        options: [
+          { key: "A", text: "Membujuk masyarakat untuk membeli keran air baru." },
+          { key: "B", text: "Mengajak masyarakat untuk peduli terhadap ketersediaan air bersih." },
+          { key: "C", text: "Memberitahukan bahwa air di rumah sedang habis." },
+          { key: "D", text: "Menjual produk air minum dalam kemasan." }
+        ],
+        correct: ["B"]
+      },
+      {
+        id: 23,
+        part: "Bagian 3: Iklan, Slogan, Poster",
+        type: "single",
+        stimulus: "Kaidah kebahasaan kalimat perintah/ajakan dalam teks persuasi.",
+        text: "Manakah yang merupakan contoh kalimat imperatif dalam sebuah iklan/poster?",
+        options: [
+          { key: "A", text: "Susu ini mengandung kalsium tinggi." },
+          { key: "B", text: "Mari kita jaga kebersihan lingkungan!" },
+          { key: "C", text: "Keripik ini rasanya sangat gurih." },
+          { key: "D", text: "Sepatu ini tersedia dalam berbagai ukuran." }
+        ],
+        correct: ["B"]
+      },
+      {
+        id: 24,
+        part: "Bagian 3: Iklan, Slogan, Poster",
+        type: "single",
+        stimulus: "Perhatikan judul iklan berikut:\n\n\"Beasiswa Prestasi untuk Siswa Kurang Mampu\"",
+        text: "Sasaran audiens dari iklan tersebut adalah...",
+        options: [
+          { key: "A", text: "Pengusaha sukses" },
+          { key: "B", text: "Pelajar dan orang tua yang membutuhkan bantuan biaya sekolah" },
+          { key: "C", text: "Anak balita" },
+          { key: "D", text: "Guru-guru pensiun" }
+        ],
+        correct: ["B"]
+      },
+      {
+        id: 25,
+        part: "Bagian 3: Iklan, Slogan, Poster",
+        type: "single",
+        stimulus: "Perbedaan karakteristik media publikasi informasi.",
+        text: "Ciri utama yang membedakan poster dengan iklan di media cetak adalah...",
+        options: [
+          { key: "A", text: "Poster selalu berukuran kecil." },
+          { key: "B", text: "Poster mengutamakan perpaduan gambar dan kata-kata yang dipajang di tempat umum." },
+          { key: "C", text: "Iklan tidak boleh menggunakan gambar." },
+          { key: "D", text: "Poster hanya berisi angka-angka statistik." }
+        ],
+        correct: ["B"]
+      },
+      {
+        id: 26,
+        part: "Bagian 3: Iklan, Slogan, Poster",
+        type: "single",
+        stimulus: "Sebuah iklan sabun cuci piring menampilkan kalimat:\n\n\"Hanya butuh satu tetes untuk lemak membandel!\"",
+        text: "Makna tersirat dari kalimat tersebut adalah...",
+        options: [
+          { key: "A", text: "Sabun tersebut sangat cair." },
+          { key: "B", text: "Sabun tersebut sangat hemat dan memiliki daya bersih yang kuat." },
+          { key: "C", text: "Lemak di piring tidak bisa hilang sama sekali." },
+          { key: "D", text: "Pengguna dilarang menggunakan lebih dari satu tetes." }
+        ],
+        correct: ["B"]
+      },
+      {
+        id: 27,
+        part: "Bagian 3: Iklan, Slogan, Poster",
+        type: "single",
+        stimulus: "Perhatikan slogan legendaris literasi:\n\n\"Buku adalah Jendela Dunia\"",
+        text: "Slogan tersebut memiliki interpretasi makna bahwa...",
+        options: [
+          { key: "A", text: "Membaca buku membuat kita bisa melihat pemandangan di luar rumah." },
+          { key: "B", text: "Dengan membaca, kita memperoleh pengetahuan yang sangat luas." },
+          { key: "C", text: "Buku harus diletakkan di dekat jendela." },
+          { key: "D", text: "Jendela di rumah harus terbuat dari kertas buku." }
+        ],
+        correct: ["B"]
+      },
+      {
+        id: 28,
+        part: "Bagian 3: Iklan, Slogan, Poster",
+        type: "single",
+        stimulus: "Karakteristik teks slogan dalam komunikasi massa.",
+        text: "Unsur yang paling menonjol pada sebuah slogan adalah...",
+        options: [
+          { key: "A", text: "Gambar yang artistik" },
+          { key: "B", text: "Kata-kata yang singkat, menarik, dan mudah diingat" },
+          { key: "C", text: "Daftar harga barang" },
+          { key: "D", text: "Nama alamat perusahaan" }
+        ],
+        correct: ["B"]
+      },
+      {
+        id: 29,
+        part: "Bagian 3: Iklan, Slogan, Poster",
+        type: "single",
+        stimulus: "Tema Iklan Layanan Masyarakat: Menjaga kesehatan generasi penerus bangsa melalui imunisasi balita.",
+        text: "Kalimat persuasif yang tepat untuk iklan layanan masyarakat tentang imunisasi adalah...",
+        options: [
+          { key: "A", text: "Imunisasi itu sakit sekali." },
+          { key: "B", text: "Jangan lupa bawa anak Anda ke Posyandu untuk imunisasi agar sehat!" },
+          { key: "C", text: "Imunisasi adalah kewajiban yang membosankan." },
+          { key: "D", text: "Dokter sedang menunggu di Puskesmas sekarang." }
+        ],
+        correct: ["B"]
+      },
+      {
+        id: 30,
+        part: "Bagian 3: Iklan, Slogan, Poster",
+        type: "single",
+        stimulus: "Prinsip dasar pembuatan media poster yang komunikatif dan fungsional.",
+        text: "Efektivitas sebuah poster ditentukan oleh...",
+        options: [
+          { key: "A", text: "Banyaknya jumlah kata yang digunakan." },
+          { key: "B", text: "Kejelasan pesan dan daya tarik visual bagi pembaca yang lewat." },
+          { key: "C", text: "Jenis kertas yang digunakan sangat mahal." },
+          { key: "D", text: "Nama pembuat poster dicantumkan dengan ukuran besar." }
+        ],
+        correct: ["B"]
+      },
+
+      // --- BAGIAN 4: PUISI RAKYAT Soal 31 - 40 ---
+      {
+        id: 31,
+        part: "Bagian 4: Puisi Rakyat",
+        type: "complex",
+        stimulus: "Perhatikan kutipan pantun berikut:\n\nBerakit-rakit ke hulu,\nBerenang-renang ke tepian.\nBersakit-sakit dahulu,\nBersenang-senang kemudian.",
+        text: "Tentukan pernyataan yang sesuai dengan struktur fisik pantun di atas! (Jawaban lebih dari satu)",
+        options: [
+          { key: "A", text: "Terdiri atas empat baris dalam satu bait." },
+          { key: "B", text: "Memiliki rima akhir dengan pola a-a-a-a." },
+          { key: "C", text: "Baris pertama dan kedua disebut sampiran." },
+          { key: "D", text: "Baris ketiga dan keempat merupakan isi." }
+        ],
+        correct: ["A", "C", "D"]
+      },
+      {
+        id: 32,
+        part: "Bagian 4: Puisi Rakyat",
+        type: "single",
+        stimulus: "Kutipan Pantun:\n\n\"Berakit-rakit ke hulu, Berenang-renang ke tepian. Bersakit-sakit dahulu, Bersenang-senang kemudian.\"",
+        text: "Berdasarkan isinya, pantun pada nomor 31 termasuk jenis pantun...",
+        options: [
+          { key: "A", text: "Teka-teki" },
+          { key: "B", text: "Nasihat" },
+          { key: "C", text: "Jenaka" },
+          { key: "D", text: "Kiasan" }
+        ],
+        correct: ["B"]
+      },
+      {
+        id: 33,
+        part: "Bagian 4: Puisi Rakyat",
+        type: "matrix",
+        stimulus: "Karakteristik struktur dan kaidah puisi rakyat Gurindam:",
+        text: "Tentukan Benar atau Salah mengenai ciri-ciri Gurindam!",
+        matrixCols: ["Benar", "Salah"],
+        matrixRows: [
+          { id: "r1", text: "Gurindam terdiri atas dua baris dalam satu bait." },
+          { id: "r2", text: "Hubungan antarbaris dalam gurindam adalah sebab-akibat." }
+        ],
+        correct: { r1: "Benar", r2: "Benar" }
+      },
+      {
+        id: 34,
+        part: "Bagian 4: Puisi Rakyat",
+        type: "complex",
+        stimulus: "Kutipan Gurindam:\n\n\"Barang siapa tiada memegang agama,\nSekali-kali tiada boleh dibilangkan nama.\"",
+        text: "Makna dari gurindam tersebut adalah... (Jawaban lebih dari satu)",
+        options: [
+          { key: "A", text: "Pentingnya memiliki pedoman hidup atau agama." },
+          { key: "B", text: "Orang yang tidak beragama tidak akan dihargai keberadaannya." },
+          { key: "C", text: "Nama seseorang harus ditulis di buku agama." },
+          { key: "D", text: "Kehidupan tanpa agama akan kehilangan arah dan kemuliaan." }
+        ],
+        correct: ["A", "B", "D"]
+      },
+      {
+        id: 35,
+        part: "Bagian 4: Puisi Rakyat",
+        type: "complex",
+        stimulus: "Perhatikan kutipan syair berikut:\n\nDengarlah wahai anakanda,\nRajinlah belajar selagi muda,\nIlmu itu harta nan abadi,\nKelak berguna di kemudian hari.",
+        text: "Ciri syair yang tampak pada kutipan tersebut adalah... (Jawaban lebih dari satu)",
+        options: [
+          { key: "A", text: "Rima akhirnya berpola a-a-a-a." },
+          { key: "B", text: "Baris 1 dan 2 adalah sampiran." },
+          { key: "C", text: "Semua baris merupakan satu kesatuan isi." },
+          { key: "D", text: "Menggunakan bahasa kiasan yang sangat sulit." }
+        ],
+        correct: ["A", "C"]
+      },
+      {
+        id: 36,
+        part: "Bagian 4: Puisi Rakyat",
+        type: "matrix",
+        stimulus: "Perbandingan jumlah baris bait pada genre puisi rakyat tradisional:",
+        text: "Tentukan kesesuaian antara jenis puisi rakyat dan deskripsi jumlah barisnya!",
+        matrixCols: ["Sesuai", "Tidak Sesuai"],
+        matrixRows: [
+          { id: "r1", text: "Pantun : Terdiri atas 4 baris per bait." },
+          { id: "r2", text: "Gurindam : Terdiri atas 2 baris per bait." }
+        ],
+        correct: { r1: "Sesuai", r2: "Sesuai" }
+      },
+      {
+        id: 37,
+        part: "Bagian 4: Puisi Rakyat",
+        type: "single",
+        stimulus: "Perhatikan pantun berikut:\n\nAda sebiji roda pedati,\nBentuknya bulat daripada besi.\nBila bermain senanglah hati,\nBenda apakah yang saya maksudkan ini?",
+        text: "Nilai kontekstual dari penggunaan pantun teka-teki di tengah masyarakat adalah...",
+        options: [
+          { key: "A", text: "Untuk memarahi orang lain secara halus." },
+          { key: "B", text: "Sebagai sarana hiburan dan mengasah otak dalam pergaulan." },
+          { key: "C", text: "Untuk menghitung jumlah roda kendaraan." },
+          { key: "D", text: "Sebagai syarat utama dalam upacara kematian." }
+        ],
+        correct: ["B"]
+      },
+      {
+        id: 38,
+        part: "Bagian 4: Puisi Rakyat",
+        type: "complex",
+        stimulus: "Kutipan Gurindam:\n\n\"Apabila terpelihara lidah,\nNiscaya dapat daripadanya faedah.\"",
+        text: "Apa pesan moral yang disampaikan gurindam tersebut? (Jawaban lebih dari satu)",
+        options: [
+          { key: "A", text: "Kita harus menjaga ucapan agar mendapatkan manfaat atau kebaikan." },
+          { key: "B", text: "Lidah harus selalu dibersihkan dengan sikat gigi." },
+          { key: "C", text: "Menjaga lisan akan menghindarkan kita dari masalah." },
+          { key: "D", text: "Berbicara sebanyak-banyaknya adalah kunci sukses." }
+        ],
+        correct: ["A", "C"]
+      },
+      {
+        id: 39,
+        part: "Bagian 4: Puisi Rakyat",
+        type: "matrix",
+        stimulus: "Menganalisis perbedaan struktur Pantun dan Syair:",
+        text: "Tentukan Benar atau Salah mengenai perbedaan Pantun dan Syair!",
+        matrixCols: ["Benar", "Salah"],
+        matrixRows: [
+          { id: "r1", text: "Pantun punya sampiran, sedangkan syair semua barisnya isi." },
+          { id: "r2", text: "Pantun rimanya a-b-a-b, sedangkan syair rimanya a-a-a-a." }
+        ],
+        correct: { r1: "Benar", r2: "Benar" }
+      },
+      {
+        id: 40,
+        part: "Bagian 4: Puisi Rakyat",
+        type: "single",
+        stimulus: "Pertanyaan Analisis HOTS (Higher Order Thinking Skills):\n\nNilai moral dalam puisi rakyat seringkali masih relevan di masa kini.",
+        text: "Mengapa nilai moral puisi rakyat tetap relevan sepanjang masa?",
+        options: [
+          { key: "A", text: "Karena puisi rakyat hanya berisi tentang sejarah masa lalu." },
+          { key: "B", text: "Karena nilai-nilai budi pekerti dan ketuhanan bersifat universal dan abadi." },
+          { key: "C", text: "Karena aturan jumlah barisnya tidak pernah berubah." },
+          { key: "D", text: "Karena anak muda zaman sekarang sangat suka menulis pantun di media sosial." }
+        ],
+        correct: ["B"]
+      }
+    ];
+
+    let studentData = {
+      name: "",
+      studentClass: "",
+      absen: "",
+      school: ""
+    };
+
+    let studentAnswers = {}; // { qId: ["A"] } or { qId: { r1: "Benar", r2: "Salah" } }
+    let studentDoubts = {};  // { qId: true/false }
+    let currentIndex = 0;
+    let timerTimerId = null;
+    let secondsLeft = 65 * 60; // 65 Menit = 3900 detik
+    let isExamRunning = false;
+    let isExamSubmitted = false;
+
+    // Pelanggaran & Web Audio Alarm System
+    let violationCounter = 0;
+    let violationHistory = [];
+    let audioCtx = null;
+    let sirenInterval = null;
+
+    let targetSheetWebhook = "https://script.google.com/macros/s/AKfycbwmoQqEMn-3wqJKi99WDZi4Mioe_ci6p0xUjpYRHdRbA1v3TCEsSDqLuXl1xCVtPd8/exec";
+
+    function initWebAudio() {
+      if (!audioCtx) {
+        const AudioClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioClass) {
+          audioCtx = new AudioClass();
+        }
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    // Aktifkan sirine terus-menerus selama modal kecurangan aktif
+    function startContinuousSiren() {
+      initWebAudio();
+      stopContinuousSiren();
+      playSirenTone();
+      sirenInterval = setInterval(playSirenTone, 1100);
+    }
+
+    function stopContinuousSiren() {
+      if (sirenInterval) {
+        clearInterval(sirenInterval);
+        sirenInterval = null;
+      }
+    }
+
+    function playSirenTone() {
+      try {
+        if (!audioCtx) return;
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+
+        const now = audioCtx.currentTime;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(750, now);
+        osc.frequency.linearRampToValueAtTime(1400, now + 0.25);
+        osc.frequency.linearRampToValueAtTime(750, now + 0.5);
+        osc.frequency.linearRampToValueAtTime(1400, now + 0.75);
+        osc.frequency.linearRampToValueAtTime(750, now + 1.0);
+
+        gain.gain.setValueAtTime(0.45, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 1.05);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(now);
+        osc.stop(now + 1.05);
+      } catch (err) {
+        console.warn("Audio synthesis:", err);
+      }
+    }
+
+    function recordViolationEvent(reason) {
+      if (!isExamRunning || isExamSubmitted) return;
+
+      violationCounter++;
+      const timeStr = new Date().toLocaleTimeString('id-ID');
+      const entry = `[${timeStr}] ${reason}`;
+      violationHistory.push(entry);
+
+      // Bunyikan Sirine Darurat Terus Menerus
+      startContinuousSiren();
+
+      // Perbarui UI Pelanggaran
+      const badgeElem = document.getElementById('badgeViolationCount');
+      if (badgeElem) {
+        badgeElem.textContent = `${violationCounter}x`;
+        badgeElem.className = 'text-base font-black px-3 py-1 rounded-xl bg-rose-100 text-rose-800 font-mono-num animate-pulse ring-2 ring-rose-400';
+      }
+
+      // Tampilkan Modal Peringatan
+      document.getElementById('modalViolationNum').textContent = `${violationCounter}x`;
+      document.getElementById('modalViolation').classList.remove('hidden');
+
+      // Update badge header
+      const honestyBadge = document.getElementById('badgeHonestyStatus');
+      const honestyText = document.getElementById('badgeHonestyText');
+      if (honestyBadge && honestyText) {
+        honestyBadge.className = 'flex items-center gap-1.5 px-3 py-1 bg-rose-500/20 text-rose-300 border border-rose-400/40 rounded-full text-xs font-bold';
+        honestyText.textContent = `Pelanggaran: ${violationCounter}x`;
+      }
+    }
+
+    function attachAntiCheatListeners() {
+      // 1. Trap Tombol Kembali (Back Navigation)
+      window.history.pushState(null, null, window.location.href);
+      window.addEventListener('popstate', () => {
+        if (isExamRunning && !isExamSubmitted) {
+          window.history.pushState(null, null, window.location.href);
+          recordViolationEvent("Mencoba menekan tombol Back / Swipe kembali");
+        }
+      });
+
+      // 2. Deteksi Keluar Tab Browser / Aplikasi di Minimalkan
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden && isExamRunning && !isExamSubmitted) {
+          recordViolationEvent("Meninggalkan tab asesmen (Pindah Aplikasi/Buka Tab Baru)");
+        }
+      });
+
+      // 3. Deteksi Window Blur (Klik di luar browser / split-screen)
+      window.addEventListener('blur', () => {
+        if (isExamRunning && !isExamSubmitted) {
+          recordViolationEvent("Fokus layar hilang (Membuka floating window / aplikasi lain)");
+        }
+      });
+
+      // 4. Deteksi Keluar dari Fullscreen (Mode Layar Penuh Ditinggalkan)
+      document.addEventListener('fullscreenchange', () => {
+        if (!document.fullscreenElement && isExamRunning && !isExamSubmitted) {
+          recordViolationEvent("Keluar dari mode Layar Penuh (Fullscreen dihentikan)");
+        }
+      });
+      document.addEventListener('webkitfullscreenchange', () => {
+        if (!document.webkitFullscreenElement && isExamRunning && !isExamSubmitted) {
+          recordViolationEvent("Keluar dari mode Layar Penuh (Fullscreen dihentikan)");
+        }
+      });
+
+      // 5. Cegah Klik Kanan
+      document.addEventListener('contextmenu', (e) => {
+        if (isExamRunning) {
+          e.preventDefault();
+          return false;
+        }
+      });
+
+      // 6. Cegah Shortcut Keyboard (F12, Inspect, Copy, Paste, Print, Select All)
+      document.addEventListener('keydown', (e) => {
+        if (!isExamRunning) return;
+
+        if (e.key === 'F12') {
+          e.preventDefault();
+          recordViolationEvent("Mencoba membuka inspect element (F12)");
+          return false;
+        }
+
+        if (e.ctrlKey || e.metaKey) {
+          const k = e.key.toLowerCase();
+          if (['c', 'v', 'u', 's', 'p', 'a', 'x', 'j', 'i'].includes(k)) {
+            e.preventDefault();
+            recordViolationEvent(`Mencoba pintasan keyboard (${e.ctrlKey ? 'Ctrl+' : 'Cmd+'}${k.toUpperCase()})`);
+            return false;
+          }
+        }
+      });
+
+      // 7. Konfirmasi jika mencoba me-reload halaman
+      window.addEventListener('beforeunload', (e) => {
+        if (isExamRunning && !isExamSubmitted) {
+          e.preventDefault();
+          e.returnValue = 'Asesmen sedang berjalan! Jika Anda keluar, lembar jawaban akan terkirim.';
+          return e.returnValue;
+        }
+      });
+    }
+
+    function lockToFullscreen() {
+      const docEl = document.documentElement;
+      if (docEl.requestFullscreen) {
+        docEl.requestFullscreen().catch(() => {});
+      } else if (docEl.webkitRequestFullscreen) {
+        docEl.webkitRequestFullscreen();
+      } else if (docEl.msRequestFullscreen) {
+        docEl.msRequestFullscreen();
+      }
+    }
+
+    const nameInputField = document.getElementById('inputStudentName');
+    // Memaksa setiap ketikan langsung menjadi HURUF BESAR / KAPITAL
+    nameInputField.addEventListener('input', (e) => {
+      e.target.value = e.target.value.toUpperCase();
+    });
+
+    document.getElementById('formRegistration').addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nameVal = nameInputField.value.trim().toUpperCase();
+      const classVal = document.getElementById('selectStudentClass').value;
+      const absenVal = document.getElementById('inputAbsen').value.trim();
+      const schoolVal = document.getElementById('inputSchoolName').value.trim().toUpperCase() || "SMP NEGERI";
+
+      if (!nameVal) {
+        displayToastNotice("Silakan tulis Nama Siswa sesuai presensi!");
+        return;
+      }
+      if (!classVal) {
+        displayToastNotice("Silakan pilih Kelas IX Anda!");
+        return;
+      }
+      if (!absenVal) {
+        displayToastNotice("Silakan masukkan Nomor Presensi!");
+        return;
+      }
+
+      studentData = {
+        name: nameVal,
+        studentClass: classVal,
+        absen: absenVal,
+        school: schoolVal
+      };
+
+      // Aktifkan Audio & Proteksi Layar
+      initWebAudio();
+      lockToFullscreen();
+      attachAntiCheatListeners();
+
+      // Luncurkan Ruang Asesmen
+      launchExamSession();
+    });
+
+    function launchExamSession() {
+      isExamRunning = true;
+
+      // Update Identitas Siswa di Sidebar
+      document.getElementById('sideStudentName').textContent = studentData.name;
+      document.getElementById('sideStudentClass').textContent = studentData.studentClass;
+      document.getElementById('sideStudentAbsen').textContent = studentData.absen;
+
+      // Alihkan Layar
+      document.getElementById('sectionRegistration').classList.add('hidden');
+      document.getElementById('sectionExamArena').classList.remove('hidden');
+      document.getElementById('sectionExamArena').classList.add('grid');
+      document.getElementById('badgeHonestyStatus').classList.remove('hidden');
+      document.getElementById('badgeHonestyStatus').classList.add('flex');
+
+      // Bangun 40 Kisi Navigasi & Tampilkan Soal No 1
+      generateNavigationGrid();
+      displayQuestionByIndex(currentIndex);
+
+      // Mulai Countdown Timer 45 Menit
+      initCountdownTimer();
+    }
+
+    function initCountdownTimer() {
+      const timerDisplay = document.getElementById('timerText');
+
+      timerTimerId = setInterval(() => {
+        secondsLeft--;
+
+        const mins = Math.floor(secondsLeft / 60);
+        const secs = secondsLeft % 60;
+        const formatted = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+        timerDisplay.textContent = formatted;
+
+        // Peringatan jika waktu tersisa < 5 Menit
+        if (secondsLeft <= 300 && secondsLeft > 60) {
+          timerDisplay.parentElement.classList.remove('text-indigo-800');
+          timerDisplay.parentElement.classList.add('text-amber-600');
+        } else if (secondsLeft <= 60) {
+          timerDisplay.parentElement.classList.remove('text-amber-600');
+          timerDisplay.parentElement.classList.add('text-rose-600', 'animate-pulse');
+        }
+
+        // Waktu Habis: Selesai otomatis
+        if (secondsLeft <= 0) {
+          clearInterval(timerTimerId);
+          isExamRunning = false;
+          displayToastNotice("Waktu 65 Menit Telah Habis! Berkas jawaban otomatis dikirim.");
+          setTimeout(() => {
+            submitFinalExam();
+          }, 1500);
+        }
+      }, 1000);
+    }
+
+    function generateNavigationGrid() {
+      const grid = document.getElementById('gridQuestionButtons');
+      grid.innerHTML = '';
+
+      EXAM_QUESTIONS.forEach((q, idx) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.id = `qGridBtn_${idx}`;
+        
+        btn.className = getGridButtonClasses(q, idx);
+        btn.innerHTML = `${q.id}`;
+
+        // Indikator Soal Kompleks / Matrix
+        if (q.type === 'complex' || q.type === 'matrix') {
+          const dot = document.createElement('span');
+          dot.className = "absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-purple-500";
+          btn.appendChild(dot);
+        }
+
+        btn.addEventListener('click', () => {
+          currentIndex = idx;
+          displayQuestionByIndex(currentIndex);
+        });
+
+        grid.appendChild(btn);
+      });
+
+      refreshAnsweredCount();
+    }
+
+    function getGridButtonClasses(q, idx) {
+      const isDoubt = !!studentDoubts[q.id];
+      const isAnswered = isQuestionFullyAnswered(q);
+      const isCurrent = idx === currentIndex;
+
+      let base = "p-2 rounded-xl font-mono-num text-xs font-bold border transition flex items-center justify-center relative ";
+
+      if (isCurrent) {
+        if (isDoubt) return base + "bg-amber-400 text-slate-950 border-amber-600 ring-2 ring-amber-300 shadow";
+        if (isAnswered) return base + "bg-indigo-600 text-white border-indigo-700 ring-2 ring-indigo-300 shadow";
+        return base + "bg-white text-indigo-900 border-indigo-600 ring-2 ring-indigo-300 shadow font-black";
+      }
+
+      if (isDoubt) return base + "bg-amber-400 text-slate-950 border-amber-500 font-black";
+      if (isAnswered) return base + "bg-indigo-600 text-white border-indigo-700 font-black";
+      return base + "bg-slate-100 text-slate-700 hover:bg-slate-200 border-slate-300";
+    }
+
+    function isQuestionFullyAnswered(q) {
+      const ans = studentAnswers[q.id];
+      if (!ans) return false;
+
+      if (q.type === 'single' || q.type === 'complex') {
+        return Array.isArray(ans) && ans.length > 0;
+      }
+      if (q.type === 'matrix') {
+        // Harus semua baris terisi
+        return Object.keys(ans).length === q.matrixRows.length;
+      }
+      return false;
+    }
+
+    function updateAllGridStatus() {
+      EXAM_QUESTIONS.forEach((q, idx) => {
+        const btn = document.getElementById(`qGridBtn_${idx}`);
+        if (btn) {
+          btn.className = getGridButtonClasses(q, idx);
+        }
+      });
+      refreshAnsweredCount();
+    }
+
+    function refreshAnsweredCount() {
+      let count = 0;
+      EXAM_QUESTIONS.forEach(q => {
+        if (isQuestionFullyAnswered(q)) count++;
+      });
+      document.getElementById('counterAnswered').textContent = `${count} / 40 Terjawab`;
+    }
+
+    function displayQuestionByIndex(index) {
+      const q = EXAM_QUESTIONS[index];
+      if (!q) return;
+
+      // Header No Soal & Kategori
+      document.getElementById('badgeActiveNumber').textContent = `SOAL NO. ${q.id}`;
+      document.getElementById('badgeActiveCategory').textContent = q.part;
+
+      // Status Ragu-Ragu
+      const btnDoubt = document.getElementById('btnToggleDoubt');
+      const textDoubt = document.getElementById('textDoubt');
+      if (studentDoubts[q.id]) {
+        btnDoubt.className = "px-3 py-1.5 rounded-xl border border-amber-500 text-amber-950 bg-amber-400 hover:bg-amber-500 text-xs font-black transition flex items-center gap-1.5 shadow-sm";
+        textDoubt.textContent = "Status: Ragu-Ragu";
+      } else {
+        btnDoubt.className = "px-3 py-1.5 rounded-xl border border-slate-300 text-slate-600 bg-slate-50 hover:bg-slate-100 text-xs font-bold transition flex items-center gap-1.5";
+        textDoubt.textContent = "Tandai Ragu-Ragu";
+      }
+
+      // Render Stimulus & Pertanyaan
+      const bodyBox = document.getElementById('activeQuestionBody');
+      bodyBox.innerHTML = '';
+
+      if (q.stimulus) {
+        const stimDiv = document.createElement('div');
+        stimDiv.className = "p-4 bg-slate-50 border border-slate-200 rounded-2xl text-slate-800 text-xs sm:text-sm whitespace-pre-line font-medium leading-relaxed shadow-xs";
+        stimDiv.textContent = q.stimulus;
+        bodyBox.appendChild(stimDiv);
+      }
+
+      const qText = document.createElement('div');
+      qText.className = "font-bold text-slate-900 text-sm sm:text-base leading-snug pt-1";
+      qText.textContent = q.text;
+      bodyBox.appendChild(qText);
+
+      // Render Opsi Jawaban Sesuai Tipe Soal
+      const optContainer = document.getElementById('activeOptionsContainer');
+      optContainer.innerHTML = '';
+
+      if (q.type === 'single' || q.type === 'complex') {
+        renderStandardOptions(q, optContainer);
+      } else if (q.type === 'matrix') {
+        renderMatrixOptions(q, optContainer);
+      }
+
+      // Tombol Navigasi Bawah
+      const btnPrev = document.getElementById('btnPrevQuestion');
+      const btnNext = document.getElementById('btnNextQuestion');
+
+      btnPrev.disabled = index === 0;
+      btnPrev.className = `px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl border font-black text-xs sm:text-sm transition flex items-center gap-2 ${
+        index === 0 ? 'opacity-35 cursor-not-allowed border-slate-200 text-slate-400' : 'border-slate-300 hover:bg-slate-100 text-slate-700'
+      }`;
+
+      if (index === EXAM_QUESTIONS.length - 1) {
+        btnNext.innerHTML = `<span>Ke Soal No 1</span> <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>`;
+      } else {
+        btnNext.innerHTML = `<span>Berikutnya</span> <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>`;
+      }
+
+      updateAllGridStatus();
+    }
+
+    function renderStandardOptions(q, container) {
+      const selectedArr = studentAnswers[q.id] || [];
+      const inputType = q.type === 'complex' ? 'checkbox' : 'radio';
+
+      if (q.type === 'complex') {
+        const note = document.createElement('div');
+        note.className = "text-xs font-extrabold text-purple-700 bg-purple-50 p-2.5 rounded-xl border border-purple-200 flex items-center gap-1.5";
+        note.innerHTML = `<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Pilihan Ganda Kompleks: Centang semua jawaban yang benar (bisa lebih dari satu pilihan).`;
+        container.appendChild(note);
+      }
+
+      q.options.forEach(opt => {
+        const isSelected = selectedArr.includes(opt.key);
+        const label = document.createElement('label');
+        label.className = `flex items-start gap-3 p-3.5 sm:p-4 rounded-2xl border-2 transition cursor-pointer select-none ${
+          isSelected ? 'border-indigo-600 bg-indigo-50/70 shadow-sm ring-1 ring-indigo-500' : 'border-slate-200 hover:border-indigo-200 hover:bg-slate-50'
+        }`;
+
+        label.innerHTML = `
+          <div class="flex items-center h-6">
+            <input type="${inputType}" name="q_${q.id}" value="${opt.key}" ${isSelected ? 'checked' : ''}
+              class="w-4 h-4 text-indigo-600 focus:ring-indigo-500 border-slate-300 ${inputType === 'radio' ? 'rounded-full' : 'rounded-md'} cursor-pointer">
+          </div>
+          <div class="text-xs sm:text-sm font-medium text-slate-800 leading-normal flex-1">
+            <span class="inline-block w-6 font-black text-indigo-900">${opt.key}.</span>
+            ${escapeHtmlText(opt.text)}
+          </div>
+        `;
+
+        const input = label.querySelector('input');
+        input.addEventListener('change', () => {
+          if (inputType === 'radio') {
+            studentAnswers[q.id] = [opt.key];
+          } else {
+            if (!studentAnswers[q.id]) studentAnswers[q.id] = [];
+            const idx = studentAnswers[q.id].indexOf(opt.key);
+            if (idx > -1) {
+              studentAnswers[q.id].splice(idx, 1);
+            } else {
+              studentAnswers[q.id].push(opt.key);
+            }
+          }
+          displayQuestionByIndex(currentIndex);
+        });
+
+        container.appendChild(label);
+      });
+    }
+
+    function renderMatrixOptions(q, container) {
+      const currentObj = studentAnswers[q.id] || {};
+
+      const tableWrapper = document.createElement('div');
+      tableWrapper.className = "overflow-x-auto rounded-2xl border border-slate-200 shadow-xs bg-white";
+
+      let tableHtml = `
+        <table class="w-full text-left text-xs sm:text-sm">
+          <thead class="bg-slate-100 text-slate-700 uppercase font-black tracking-wider text-[11px] border-b border-slate-200">
+            <tr>
+              <th class="p-3 sm:p-4">Pernyataan Soal</th>
+              <th class="p-3 sm:p-4 text-center w-28">${q.matrixCols[0]}</th>
+              <th class="p-3 sm:p-4 text-center w-28">${q.matrixCols[1]}</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 font-medium">
+      `;
+
+      q.matrixRows.forEach(row => {
+        const val = currentObj[row.id] || "";
+        tableHtml += `
+          <tr class="hover:bg-slate-50/80 transition">
+            <td class="p-3 sm:p-4 text-slate-800 leading-relaxed">${escapeHtmlText(row.text)}</td>
+            <td class="p-3 sm:p-4 text-center bg-slate-50/40">
+              <label class="cursor-pointer inline-flex items-center justify-center p-2 rounded-lg hover:bg-indigo-50">
+                <input type="radio" name="matrix_${q.id}_${row.id}" value="${q.matrixCols[0]}" ${val === q.matrixCols[0] ? 'checked' : ''}
+                  data-row="${row.id}" data-col="${q.matrixCols[0]}"
+                  class="w-4 h-4 text-indigo-600 focus:ring-indigo-500 border-slate-300">
+              </label>
+            </td>
+            <td class="p-3 sm:p-4 text-center bg-slate-50/40">
+              <label class="cursor-pointer inline-flex items-center justify-center p-2 rounded-lg hover:bg-indigo-50">
+                <input type="radio" name="matrix_${q.id}_${row.id}" value="${q.matrixCols[1]}" ${val === q.matrixCols[1] ? 'checked' : ''}
+                  data-row="${row.id}" data-col="${q.matrixCols[1]}"
+                  class="w-4 h-4 text-indigo-600 focus:ring-indigo-500 border-slate-300">
+              </label>
+            </td>
+          </tr>
+        `;
+      });
+
+      tableHtml += `</tbody></table>`;
+      tableWrapper.innerHTML = tableHtml;
+
+      // Event listener radio matrix
+      const radios = tableWrapper.querySelectorAll('input[type="radio"]');
+      radios.forEach(radio => {
+        radio.addEventListener('change', (e) => {
+          const rowId = e.target.getAttribute('data-row');
+          const colVal = e.target.getAttribute('data-col');
+          if (!studentAnswers[q.id]) studentAnswers[q.id] = {};
+          studentAnswers[q.id][rowId] = colVal;
+          updateAllGridStatus();
+        });
+      });
+
+      container.appendChild(tableWrapper);
+    }
+
+    document.getElementById('btnToggleDoubt').addEventListener('click', () => {
+      const q = EXAM_QUESTIONS[currentIndex];
+      if (!q) return;
+      studentDoubts[q.id] = !studentDoubts[q.id];
+      displayQuestionByIndex(currentIndex);
+    });
+
+    document.getElementById('btnPrevQuestion').addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        displayQuestionByIndex(currentIndex);
+      }
+    });
+
+    document.getElementById('btnNextQuestion').addEventListener('click', () => {
+      if (currentIndex < EXAM_QUESTIONS.length - 1) {
+        currentIndex++;
+      } else {
+        currentIndex = 0;
+      }
+      displayQuestionByIndex(currentIndex);
+    });
+
+    // Modal Konfirmasi Pengiriman Ujian
+    document.getElementById('btnConfirmFinish').addEventListener('click', () => {
+      let count = 0;
+      EXAM_QUESTIONS.forEach(q => {
+        if (isQuestionFullyAnswered(q)) count++;
+      });
+
+      document.getElementById('confirmSummaryText').textContent = 
+        `Anda telah menjawab ${count} dari ${EXAM_QUESTIONS.length} butir soal. Apakah Anda yakin ingin mengakhiri dan mengirim asesmen ini sekarang?`;
+      document.getElementById('modalConfirmSubmit').classList.remove('hidden');
+    });
+
+    document.getElementById('btnCancelSubmit').addEventListener('click', () => {
+      document.getElementById('modalConfirmSubmit').classList.add('hidden');
+    });
+
+    document.getElementById('btnExecuteSubmit').addEventListener('click', () => {
+      document.getElementById('modalConfirmSubmit').classList.add('hidden');
+      submitFinalExam();
+    });
+
+    function submitFinalExam() {
+      if (isExamSubmitted) return;
+      isExamSubmitted = true;
+      isExamRunning = false;
+      clearInterval(timerTimerId);
+
+      // Hitung Total Jawaban Benar (1 Poin per Soal Benar)
+      let totalCorrect = 0;
+
+      EXAM_QUESTIONS.forEach(q => {
+        const student = studentAnswers[q.id];
+        if (!student) return;
+
+        if (q.type === 'single' || q.type === 'complex') {
+          const sArr = (student || []).slice().sort();
+          const cArr = (q.correct || []).slice().sort();
+          if (sArr.length === cArr.length && sArr.every((v, i) => v === cArr[i])) {
+            totalCorrect++;
+          }
+        } else if (q.type === 'matrix') {
+          // Harus cocok semua baris
+          let isMatrixAllMatch = true;
+          q.matrixRows.forEach(row => {
+            if (student[row.id] !== q.correct[row.id]) {
+              isMatrixAllMatch = false;
+            }
+          });
+          if (isMatrixAllMatch) {
+            totalCorrect++;
+          }
+        }
+      });
+
+      // Konversi Nilai Skala 100: (Benar / 40) * 100
+      const finalScoreScaled = ((totalCorrect / EXAM_QUESTIONS.length) * 100).toFixed(1);
+
+      // Tampilkan Hasil di Layar Selesai
+      document.getElementById('sectionExamArena').classList.remove('grid');
+      document.getElementById('sectionExamArena').classList.add('hidden');
+      document.getElementById('sectionExamResult').classList.remove('hidden');
+
+      document.getElementById('resStudentName').textContent = studentData.name;
+      document.getElementById('resStudentClass').textContent = studentData.studentClass;
+      document.getElementById('resStudentAbsen').textContent = studentData.absen;
+
+      document.getElementById('resScoreCorrect').textContent = totalCorrect;
+      document.getElementById('resFinalScore').textContent = finalScoreScaled;
+
+      // Status Kejujuran
+      const honestyTag = document.getElementById('resHonestyTag');
+      if (violationCounter === 0) {
+        honestyTag.className = "text-xs font-black px-3 py-1.5 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 inline-block mt-1";
+        honestyTag.textContent = "0 Pelanggaran (Sangat Jujur & Tertib)";
+      } else {
+        honestyTag.className = "text-xs font-black px-3 py-1.5 rounded-lg bg-rose-500/20 text-rose-300 border border-rose-500/30 inline-block mt-1";
+        honestyTag.textContent = `Tercatat ${violationCounter}x Pelanggaran Keluar Tab`;
+      }
+
+      // Kirim Data Nilai & Riwayat Pelanggaran ke Google Sheets
+      transmitResultsToGoogleSheet({
+        name: studentData.name,
+        studentClass: studentData.studentClass,
+        absen: studentData.absen,
+        school: studentData.school,
+        scoreCorrect: totalCorrect,
+        finalScore: finalScoreScaled,
+        violationCount: violationCounter,
+        violationDetails: violationHistory.join(" || ") || "Tertib tanpa pelanggaran"
+      });
+
+      // Siapkan File Unduhan CSV
+      prepareCSVExport(totalCorrect, finalScoreScaled);
+    }
+
+    async function transmitResultsToGoogleSheet(payload) {
+      const statusText = document.getElementById('syncStatusText');
+      const statusBox = document.getElementById('syncStatusBox');
+
+      if (!targetSheetWebhook) {
+        statusText.textContent = "Nilai tersimpan di gawai (URL Google Sheet belum dikonfigurasi).";
+        return;
+      }
+
+      statusText.innerHTML = `<span class="inline-block animate-spin mr-1.5">⏳</span> Mengirim nilai dan catatan kejujuran ke Google Sheet Pengawas...`;
+
+      try {
+        await fetch(targetSheetWebhook, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        statusText.innerHTML = "✓ <strong>Berhasil Dikirim!</strong> Nilai dan catatan kejujuran telah tersinkronisasi ke Spreadsheet Guru.";
+        if (statusBox) {
+          statusBox.className = "p-3.5 bg-emerald-50 rounded-2xl text-xs text-emerald-800 border border-emerald-200 flex items-center justify-center gap-2 font-semibold";
+        }
+      } catch (err) {
+        console.error("Gagal sinkronisasi:", err);
+        statusText.innerHTML = "Koneksi cloud terhambat jaringan. Silakan klik <strong>Unduh Rekap Nilai (.CSV)</strong> sebagai bukti penilaian.";
+        if (statusBox) {
+          statusBox.className = "p-3.5 bg-amber-50 rounded-2xl text-xs text-amber-800 border border-amber-200 flex items-center justify-center gap-2 font-semibold";
+        }
+      }
+    }
+
+    function prepareCSVExport(correctCount, finalGrade) {
+      const btn = document.getElementById('btnDownloadCSV');
+      btn.onclick = () => {
+        let csv = "data:text/csv;charset=utf-8,";
+        csv += "Nama Lengkap,Kelas,Nomor Absen,Sekolah,Total Benar (Dari 40),Nilai (Skala 100),Total Pelanggaran,Waktu Selesai\n";
+        csv += `"${studentData.name}","${studentData.studentClass}","${studentData.absen}","${studentData.school}",${correctCount},${finalGrade},${violationCounter},"${new Date().toLocaleString('id-ID')}"\n\n`;
+
+        csv += "Nomor Soal,Bagian Materi,Tipe Soal,Jawaban Siswa,Kunci Jawaban,Hasil\n";
+        EXAM_QUESTIONS.forEach(q => {
+          let ansText = "";
+          let keyText = "";
+          let statusText = "SALAH";
+
+          if (q.type === 'single' || q.type === 'complex') {
+            ansText = (studentAnswers[q.id] || []).join("-") || "KOSONG";
+            keyText = (q.correct || []).join("-");
+            if (ansText === keyText) statusText = "BENAR";
+          } else if (q.type === 'matrix') {
+            const ansObj = studentAnswers[q.id] || {};
+            const userArr = q.matrixRows.map(r => `${r.id}:${ansObj[r.id] || '?'}`);
+            const keyArr = q.matrixRows.map(r => `${r.id}:${q.correct[r.id]}`);
+            ansText = userArr.join("; ");
+            keyText = keyArr.join("; ");
+            if (userArr.join("") === keyArr.join("")) statusText = "BENAR";
+          }
+
+          csv += `${q.id},"${q.part}","${q.type}","${ansText}","${keyText}","${statusText}"\n`;
+        });
+
+        const encoded = encodeURI(csv);
+        const a = document.createElement('a');
+        a.setAttribute('href', encoded);
+        a.setAttribute('download', `HASIL_ASTS_KELAS_IX_${studentData.studentClass}_ABSEN_${studentData.absen}_${studentData.name.replace(/\s+/g, '_')}.csv`);
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      };
+    }
+
+    document.getElementById('btnOpenTeacherSettings').addEventListener('click', () => {
+      document.getElementById('modalTeacherConfig').classList.remove('hidden');
+      document.getElementById('inputWebhookUrl').value = targetSheetWebhook;
+    });
+
+    document.getElementById('btnOpenSheetModal').addEventListener('click', () => {
+      document.getElementById('modalTeacherConfig').classList.remove('hidden');
+      document.getElementById('inputWebhookUrl').value = targetSheetWebhook;
+      const codeBox = document.getElementById('appsScriptCode');
+      if (codeBox) {
+        codeBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        codeBox.classList.add('ring-4', 'ring-amber-400');
+        setTimeout(() => codeBox.classList.remove('ring-4', 'ring-amber-400'), 1500);
+      }
+    });
+
+    document.getElementById('btnCloseTeacherConfig').addEventListener('click', () => {
+      document.getElementById('modalTeacherConfig').classList.add('hidden');
+    });
+
+    document.getElementById('btnSaveConfig').addEventListener('click', () => {
+      const val = document.getElementById('inputWebhookUrl').value.trim();
+      targetSheetWebhook = val;
+
+      const alertEl = document.getElementById('labelSaveAlert');
+      alertEl.classList.remove('hidden');
+      setTimeout(() => {
+        alertEl.classList.add('hidden');
+        document.getElementById('modalTeacherConfig').classList.add('hidden');
+      }, 1200);
+    });
+
+    document.getElementById('btnCopyScript').addEventListener('click', () => {
+      const ta = document.getElementById('appsScriptCode');
+      ta.select();
+      document.execCommand('copy');
+
+      const btn = document.getElementById('btnCopyScript');
+      const orig = btn.textContent;
+      btn.textContent = "Tersalin!";
+      setTimeout(() => btn.textContent = orig, 1800);
+    });
+
+    // Dismiss Peringatan Pelanggaran
+    document.getElementById('btnDismissViolation').addEventListener('click', () => {
+      stopContinuousSiren();
+      document.getElementById('modalViolation').classList.add('hidden');
+      lockToFullscreen();
+    });
+
+    function escapeHtmlText(str) {
+      if (!str) return "";
+      const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+      };
+      return str.replace(/[&<>"']/g, m => map[m]);
+    }
+
+    function displayToastNotice(message) {
+      const toast = document.createElement('div');
+      toast.className = "fixed bottom-5 right-5 z-50 bg-slate-900 text-white px-5 py-3.5 rounded-2xl shadow-2xl text-xs sm:text-sm font-black border border-slate-700 flex items-center gap-2.5 animate-bounce-short";
+      toast.innerHTML = `<svg class="w-5 h-5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg> <span>${message}</span>`;
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 3500);
+    }
+  </script>
+</body>
+</html>
