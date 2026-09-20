@@ -28,9 +28,8 @@
       50% { background-color: rgba(153, 27, 27, 0.98); }
     }
     .siren-danger-overlay {
-      animation: siren-flash 0.8s infinite;
+      animation: siren-flash 0.7s infinite;
     }
-    /* Scrollbar Halus */
     ::-webkit-scrollbar {
       width: 6px;
       height: 6px;
@@ -87,9 +86,7 @@
 
   <main class="flex-grow max-w-7xl w-full mx-auto px-3 sm:px-6 py-4 sm:py-6 flex flex-col justify-center items-center">
 
-    <!-- ================================================================= -->
-    <!-- 1. TAHAP REGISTRASI SISWA SESUAI PRESENSI (WAJIB HURUF KAPITAL)  -->
-    <!-- ================================================================= -->
+    <!-- 1. REGISTRASI SISWA SESUAI PRESENSI (WAJIB HURUF KAPITAL) -->
     <div id="sectionRegistration" class="w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-slate-200/90 overflow-hidden transition-all duration-300">
       <div class="bg-gradient-to-br from-indigo-900 via-blue-900 to-indigo-800 p-6 sm:p-7 text-white relative">
         <div class="flex items-center justify-between gap-4">
@@ -109,7 +106,6 @@
       </div>
 
       <form id="formRegistration" class="p-5 sm:p-8 space-y-5">
-        <!-- Peringatan Huruf Kapital & Integritas -->
         <div class="p-4 bg-amber-50/90 border-l-4 border-amber-500 rounded-r-2xl flex items-start gap-3">
           <svg class="w-6 h-6 text-amber-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
           <div class="text-xs sm:text-sm text-amber-950 leading-relaxed font-medium">
@@ -199,11 +195,8 @@
       </form>
     </div>
 
-    <!-- ================================================================= -->
-    <!-- 2. TAHAP ARENA UJIAN (EXAM ARENA - TERKUNCI FULLSCREEN)          -->
-    <!-- ================================================================= -->
+    <!-- 2. ARENA UJIAN (EXAM ARENA - TERKUNCI FULLSCREEN) -->
     <div id="sectionExamArena" class="hidden w-full max-w-7xl grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6 items-start">
-      
       <aside class="lg:col-span-1 space-y-4 order-2 lg:order-1">
         <!-- Kartu Timer & Catatan Kecurangan -->
         <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-4 sm:p-5">
@@ -216,7 +209,6 @@
             <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-lg">Mundur</span>
           </div>
 
-          <!-- Pelanggaran Box -->
           <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
             <div>
               <div class="text-xs font-black text-slate-600">Pelanggaran Keluar:</div>
@@ -249,7 +241,6 @@
             <!-- 40 Tombol Dibuat Melalui JS -->
           </div>
 
-          <!-- Legenda Warna -->
           <div class="mt-4 pt-3 border-t border-slate-100 grid grid-cols-2 gap-2 text-[11px] text-slate-500 font-bold">
             <div class="flex items-center gap-1.5">
               <span class="w-3 h-3 rounded bg-indigo-600 inline-block"></span> Sudah Dijawab
@@ -270,7 +261,6 @@
       <section class="lg:col-span-3 order-1 lg:order-2 space-y-4">
         <div class="bg-white rounded-3xl shadow-sm border border-slate-200 p-5 sm:p-8 min-h-[520px] flex flex-col justify-between">
           <div>
-            <!-- Header Kartu Soal -->
             <div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-slate-200 mb-5">
               <div class="flex items-center gap-2 sm:gap-3">
                 <span id="badgeActiveNumber" class="text-xs font-black text-white bg-indigo-700 px-3.5 py-1.5 rounded-xl tracking-wider">
@@ -290,12 +280,10 @@
               </div>
             </div>
 
-            <!-- Teks Stimulus dan Pertanyaan Soal -->
             <div id="activeQuestionBody" class="space-y-3.5 text-slate-800 leading-relaxed text-sm sm:text-base font-normal">
-              <!-- Render stimulus bacaan & pertanyaan disini -->
+              <!-- Render stimulus bacaan & pertanyaan -->
             </div>
 
-            <!-- Kontainer Input Jawaban (Pilihan Ganda, Kompleks, atau Tabel) -->
             <div id="activeOptionsContainer" class="mt-6 space-y-3">
               <!-- Render opsi jawaban dinamis -->
             </div>
@@ -321,9 +309,7 @@
       </section>
     </div>
 
-    <!-- ================================================================= -->
-    <!-- 3. TAHAP SELESAI / HASIL REKAP NILAI & SINKRONISASI             -->
-    <!-- ================================================================= -->
+    <!-- 3. TAHAP SELESAI / HASIL REKAP NILAI & SINKRONISASI -->
     <div id="sectionExamResult" class="hidden w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden text-center p-6 sm:p-10 space-y-6">
       <div class="w-20 h-20 mx-auto rounded-3xl bg-emerald-100 text-emerald-600 flex items-center justify-center shadow-inner">
         <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
@@ -337,7 +323,6 @@
         <p class="text-xs sm:text-sm text-slate-500 mt-1">Seluruh berkas jawaban telah dihitung dan dilaporkan ke database guru.</p>
       </div>
 
-      <!-- Kartu Hasil Nilai -->
       <div class="bg-gradient-to-br from-slate-900 via-indigo-950 to-blue-950 text-white rounded-3xl p-6 sm:p-7 shadow-xl text-left relative overflow-hidden border border-slate-800">
         <div class="flex justify-between items-start">
           <div>
@@ -370,13 +355,11 @@
         </div>
       </div>
 
-      <!-- Status Sinkronisasi Google Sheets -->
       <div id="syncStatusBox" class="p-3.5 bg-slate-50 rounded-2xl text-xs text-slate-700 border border-slate-200 flex items-center justify-center gap-2">
         <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
         <span id="syncStatusText">Data tersinkronisasi otomatis ke Google Spreadsheet Pengawas.</span>
       </div>
 
-      <!-- Aksi Unduh dan Cetak -->
       <div class="flex flex-col sm:flex-row gap-3 pt-2">
         <button type="button" id="btnDownloadCSV" class="flex-1 py-3 px-4 rounded-xl border-2 border-slate-200 hover:bg-slate-50 text-slate-800 font-black text-xs sm:text-sm transition flex items-center justify-center gap-2">
           <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
@@ -395,11 +378,9 @@
     Asesmen Tengah Semester (ASTS) Ganjil Bahasa Indonesia Kelas IX SMP • Mengutamakan Kejujuran & Nilai Karakter
   </footer>
 
-  <!-- ================================================================= -->
-  <!-- MODAL: PERINGATAN KECURANGAN & ALARM SIRINE DARURAT              -->
-  <!-- ================================================================= -->
+  <!-- MODAL: PERINGATAN KECURANGAN & ALARM SIRINE DARURAT -->
   <div id="modalViolation" class="hidden fixed inset-0 z-50 siren-danger-overlay backdrop-blur-md flex items-center justify-center p-4">
-    <div class="w-full max-w-md bg-white rounded-3xl p-6 sm:p-8 text-center space-y-4 shadow-2xl border-4 border-rose-600 animate-bounce-short">
+    <div class="w-full max-w-md bg-white rounded-3xl p-6 sm:p-8 text-center space-y-4 shadow-2xl border-4 border-rose-600">
       <div class="w-20 h-20 mx-auto rounded-3xl bg-rose-100 text-rose-600 flex items-center justify-center shadow-inner">
         <svg class="w-12 h-12 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
       </div>
@@ -423,9 +404,7 @@
     </div>
   </div>
 
-  <!-- ================================================================= -->
-  <!-- MODAL: KONFIRMASI SELESAI UJIAN                                 -->
-  <!-- ================================================================= -->
+  <!-- MODAL: KONFIRMASI SELESAI UJIAN -->
   <div id="modalConfirmSubmit" class="hidden fixed inset-0 z-40 bg-slate-900/70 backdrop-blur-xs flex items-center justify-center p-4">
     <div class="w-full max-w-md bg-white rounded-3xl p-6 text-center space-y-4 shadow-2xl border border-slate-200">
       <div class="w-14 h-14 mx-auto rounded-2xl bg-indigo-100 text-indigo-700 flex items-center justify-center">
@@ -447,9 +426,7 @@
     </div>
   </div>
 
-  <!-- ================================================================= -->
-  <!-- MODAL: PENGATURAN GURU & INTEGRASI GOOGLE SHEETS                 -->
-  <!-- ================================================================= -->
+  <!-- MODAL: PENGATURAN GURU & INTEGRASI GOOGLE SHEETS -->
   <div id="modalTeacherConfig" class="hidden fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-xs flex items-center justify-center p-4">
     <div class="w-full max-w-2xl bg-white rounded-3xl p-6 space-y-5 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
       <div class="flex items-center justify-between pb-3 border-b border-slate-200">
@@ -524,18 +501,14 @@ function doPost(e) {
   </div>
 
   <script>
-    /* =========================================================================
-       BANK SOAL LENGKAP 40 BUTIR KELAS IX SESUAI DOKUMEN ASESMEN & KUNCI JAWABAN
-       Bobot 1 Poin per Soal (Maksimal 40 Poin = Nilai 100)
-       ========================================================================= */
     const EXAM_QUESTIONS = [
       // --- BAGIAN 1: TEKS LAPORAN HASIL OBSERVASI (LHO) Soal 1 - 10 ---
       {
         id: 1,
         part: "Bagian 1: Teks LHO",
         type: "single",
-        stimulus: "Perhatikan teks berikut!\n\nKunang-kunang merupakan jenis serangga yang dapat mengeluarkan cahaya yang jelas terlihat pada malam hari. Cahaya ini dihasilkan dari \"kotak cahaya\" di bagian bawah perut mereka. Spesies ini banyak ditemukan di ekosistem hutan mangrove yang memiliki tingkat kelembapan tinggi dan ketersediaan pakan yang melimpah. Di hutan mangrove, kunang-kunang berperan sebagai bioindikator kesehatan lingkungan karena mereka sangat sensitif terhadap polusi cahaya dan pestisida.",
-        text: "Paragraf tersebut dalam struktur teks LHO dikategorikan sebagai...",
+        stimulus: "Teks 1 (Soal 1-3)\n\nKunang-kunang merupakan jenis serangga yang dapat mengeluarkan cahaya yang jelas terlihat pada malam hari. Cahaya ini dihasilkan dari \"kotak cahaya\" di bagian bawah perut mereka. Spesies ini banyak ditemukan di ekosistem hutan mangrove yang memiliki tingkat kelembapan tinggi dan ketersediaan pakan yang melimpah. Di hutan mangrove, kunang-kunang berperan sebagai bioindikator kesehatan lingkungan karena mereka sangat sensitif terhadap polusi cahaya dan pestisida.",
+        text: "1. Paragraf tersebut dalam struktur teks LHO dikategorikan sebagai...",
         options: [
           { key: "A", text: "Deskripsi bagian" },
           { key: "B", text: "Deskripsi manfaat" },
@@ -548,8 +521,8 @@ function doPost(e) {
         id: 2,
         part: "Bagian 1: Teks LHO",
         type: "single",
-        stimulus: "Kutipan Teks:\n\n\"Di hutan mangrove, kunang-kunang berperan sebagai bioindikator kesehatan lingkungan karena mereka sangat sensitif terhadap polusi cahaya dan pestisida.\"",
-        text: "Kata \"bioindikator\" pada teks di atas merupakan kata teknis di bidang...",
+        stimulus: "Berdasarkan Teks 1:\n\n\"Di hutan mangrove, kunang-kunang berperan sebagai bioindikator kesehatan lingkungan karena mereka sangat sensitif terhadap polusi cahaya dan pestisida.\"",
+        text: "2. Kata \"bioindikator\" pada teks di atas merupakan kata teknis di bidang...",
         options: [
           { key: "A", text: "Geografi" },
           { key: "B", text: "Biologi" },
@@ -562,8 +535,8 @@ function doPost(e) {
         id: 3,
         part: "Bagian 1: Teks LHO",
         type: "single",
-        stimulus: "Kutipan Teks:\n\n\"Kunang-kunang berperan sebagai bioindikator kesehatan lingkungan karena mereka sangat sensitif terhadap polusi cahaya dan pestisida.\"",
-        text: "Berdasarkan teks, manakah inferensi (kesimpulan tersirat) yang paling tepat mengenai keberadaan kunang-kunang?",
+        stimulus: "Berdasarkan Teks 1:\n\n\"Kunang-kunang berperan sebagai bioindikator kesehatan lingkungan karena mereka sangat sensitif terhadap polusi cahaya dan pestisida.\"",
+        text: "3. Berdasarkan teks, manakah inferensi (kesimpulan tersirat) yang paling tepat mengenai keberadaan kunang-kunang?",
         options: [
           { key: "A", text: "Kunang-kunang hanya bisa hidup di pohon bakau yang tinggi." },
           { key: "B", text: "Jika jumlah kunang-kunang berkurang, maka lingkungan tersebut kemungkinan tercemar polusi." },
@@ -576,13 +549,13 @@ function doPost(e) {
         id: 4,
         part: "Bagian 1: Teks LHO",
         type: "single",
-        stimulus: "Perhatikan teks berikut!\n\nLidah buaya memiliki daun berdaging tebal yang berwarna hijau. Daunnya panjang, meruncing, dan pada bagian pinggirnya terdapat duri-duri kecil. Di dalam daun tersebut terdapat gel bening yang kaya akan nutrisi. Lidah buaya (Aloe vera) adalah tanaman yang tahan terhadap kekeringan karena mampu menyimpan cadangan air di dalam jaringannya.",
-        text: "Kalimat definisi dalam teks tersebut ditunjukkan oleh kalimat...",
+        stimulus: "Teks 2 (Soal 4-6)\n\nLidah buaya memiliki daun berdaging tebal yang berwarna hijau. Daunnya panjang, meruncing, dan pada bagian pinggirnya terdapat duri-duri kecil. Di dalam daun tersebut terdapat gel bening yang kaya akan nutrisi. Lidah buaya (Aloe vera) adalah tanaman yang tahan terhadap kekeringan karena mampu menyimpan cadangan air di dalam jaringannya.",
+        text: "4. Kalimat definisi dalam teks tersebut ditunjukkan oleh kalimat...",
         options: [
           { key: "A", text: "Lidah buaya memiliki daun berdaging tebal yang berwarna hijau." },
           { key: "B", text: "Daunnya panjang, meruncing, dan pada bagian pinggirnya terdapat duri." },
           { key: "C", text: "Di dalam daun tersebut terdapat gel bening yang kaya akan nutrisi." },
-          { key: "D", text: "Lidah buaya (Aloe vera) adalah tanaman yang tahan terhadap kekeringan karena mampu menyimpan cadangan air di dalam jaringannya." }
+          { key: "D", text: "Lidah buaya (Aloe vera) adalah tanaman yang tahan terhadap kekeringan." }
         ],
         correct: ["D"]
       },
@@ -590,8 +563,8 @@ function doPost(e) {
         id: 5,
         part: "Bagian 1: Teks LHO",
         type: "single",
-        stimulus: "Kutipan Teks:\n\n\"Daunnya panjang, meruncing, dan pada bagian pinggirnya terdapat duri-duri kecil. Di dalam daun tersebut terdapat gel bening yang kaya akan nutrisi.\"",
-        text: "Bagian teks yang menjelaskan ciri fisik daun lidah buaya secara detail disebut...",
+        stimulus: "Berdasarkan Teks 2 (Lidah Buaya):\n\n\"Daunnya panjang, meruncing, dan pada bagian pinggirnya terdapat duri-duri kecil. Di dalam daun tersebut terdapat gel bening yang kaya akan nutrisi.\"",
+        text: "5. Bagian teks yang menjelaskan ciri fisik daun lidah buaya secara detail disebut...",
         options: [
           { key: "A", text: "Definisi umum" },
           { key: "B", text: "Deskripsi bagian" },
@@ -604,8 +577,8 @@ function doPost(e) {
         id: 6,
         part: "Bagian 1: Teks LHO",
         type: "single",
-        stimulus: "Berdasarkan Teks Lidah Buaya:\n\n\"Lidah buaya memiliki daun berdaging tebal yang berwarna hijau. Daunnya panjang, meruncing, dan pada bagian pinggirnya terdapat duri-duri kecil.\"",
-        text: "Manakah pernyataan berikut yang merupakan fakta berdasarkan teks di atas?",
+        stimulus: "Berdasarkan Teks 2 (Lidah Buaya):\n\n\"Lidah buaya memiliki daun berdaging tebal yang berwarna hijau. Daunnya panjang, meruncing, dan pada bagian pinggirnya terdapat duri-duri kecil. Di dalam daun tersebut terdapat gel bening yang kaya akan nutrisi.\"",
+        text: "6. Manakah pernyataan berikut yang merupakan fakta berdasarkan teks di atas?",
         options: [
           { key: "A", text: "Lidah buaya adalah tanaman tercantik di daerah kering." },
           { key: "B", text: "Gel lidah buaya mungkin sangat enak dikonsumsi." },
@@ -618,8 +591,8 @@ function doPost(e) {
         id: 7,
         part: "Bagian 1: Teks LHO",
         type: "single",
-        stimulus: "Perhatikan teks berikut!\n\nTerumbu karang adalah sekumpulan hewan polip yang bersimbiosis dengan alga. Keberadaannya sangat penting bagi ekosistem laut karena menjadi tempat pemijahan ikan. Selain itu, terumbu karang berfungsi sebagai penahan ombak alami yang melindungi pantai dari abrasi. Secara ekonomi, terumbu karang merupakan daya tarik wisata bahari yang mampu meningkatkan pendapatan masyarakat pesisir.",
-        text: "Kalimat yang menunjukkan deskripsi manfaat adalah...",
+        stimulus: "Teks 3 (Soal 7-10)\n\nTerumbu karang adalah sekumpulan hewan polip yang bersimbiosis dengan alga. Keberadaannya sangat penting bagi ekosistem laut karena menjadi tempat pemijahan ikan. Selain itu, terumbu karang berfungsi sebagai penahan ombak alami yang melindungi pantai dari abrasi. Secara ekonomi, terumbu karang merupakan daya tarik wisata bahari yang mampu meningkatkan pendapatan masyarakat pesisir.",
+        text: "7. Kalimat yang menunjukkan deskripsi manfaat adalah...",
         options: [
           { key: "A", text: "Terumbu karang adalah sekumpulan hewan polip." },
           { key: "B", text: "Terumbu karang berfungsi sebagai penahan ombak alami untuk mencegah abrasi." },
@@ -632,8 +605,8 @@ function doPost(e) {
         id: 8,
         part: "Bagian 1: Teks LHO",
         type: "single",
-        stimulus: "Kutipan Teks:\n\n\"Terumbu karang adalah sekumpulan hewan polip yang bersimbiosis dengan alga.\"",
-        text: "Kata \"bersimbiosis\" merupakan verba material yang bermakna...",
+        stimulus: "Berdasarkan Teks 3:\n\n\"Terumbu karang adalah sekumpulan hewan polip yang bersimbiosis dengan alga.\"",
+        text: "8. Kata \"bersimbiosis\" merupakan verba material yang bermakna...",
         options: [
           { key: "A", text: "Cara kerja dua organisme yang saling memengaruhi atau bergantung." },
           { key: "B", text: "Proses pembersihan karang secara alami." },
@@ -646,8 +619,8 @@ function doPost(e) {
         id: 9,
         part: "Bagian 1: Teks LHO",
         type: "single",
-        stimulus: "Kutipan Teks:\n\n\"Terumbu karang berfungsi sebagai penahan ombak alami yang melindungi pantai dari abrasi. Secara ekonomi, terumbu karang merupakan daya tarik wisata bahari yang mampu meningkatkan pendapatan masyarakat pesisir.\"",
-        text: "Objek observasi dalam teks tersebut dilaporkan secara objektif. Hal ini dibuktikan dengan...",
+        stimulus: "Berdasarkan Teks 3:\n\n\"Terumbu karang berfungsi sebagai penahan ombak alami yang melindungi pantai dari abrasi. Secara ekonomi, terumbu karang merupakan daya tarik wisata bahari yang mampu meningkatkan pendapatan masyarakat pesisir.\"",
+        text: "9. Objek observasi dalam teks tersebut dilaporkan secara objektif. Hal ini dibuktikan dengan...",
         options: [
           { key: "A", text: "Penggunaan kata-kata yang memuji keindahan karang." },
           { key: "B", text: "Penyampaian informasi berdasarkan fungsi dan ciri fisik yang dapat diuji." },
@@ -660,8 +633,8 @@ function doPost(e) {
         id: 10,
         part: "Bagian 1: Teks LHO",
         type: "single",
-        stimulus: "Perhatikan teks terumbu karang di atas secara keseluruhan.",
-        text: "Simpulan yang tepat untuk teks di atas adalah...",
+        stimulus: "Berdasarkan Teks 3 (Terumbu Karang) secara menyeluruh:",
+        text: "10. Simpulan yang tepat untuk teks di atas adalah...",
         options: [
           { key: "A", text: "Terumbu karang hanya bermanfaat bagi ikan-ikan kecil di laut." },
           { key: "B", text: "Kelestarian terumbu karang sangat penting bagi ekologi maupun ekonomi." },
@@ -676,8 +649,8 @@ function doPost(e) {
         id: 11,
         part: "Bagian 2: Teks Diskusi",
         type: "complex",
-        stimulus: "Teks Diskusi 1:\n\nPenggunaan gawai di sekolah terus menjadi perdebatan. Pihak yang mendukung berpendapat bahwa gawai mempermudah akses informasi dan literasi digital. Sebaliknya, pihak yang menentang mengkhawatirkan gangguan konsentrasi, potensi perundungan siber, dan ketergantungan pada teknologi yang mengurangi interaksi sosial siswa.",
-        text: "Berikan tanda centang pada pernyataan yang merupakan isu utama dalam teks tersebut (Jawaban lebih dari satu):",
+        stimulus: "Teks Diskusi 1 (Soal 11-15)\n\nPenggunaan gawai di sekolah terus menjadi perdebatan. Pihak yang mendukung berpendapat bahwa gawai mempermudah akses informasi dan literasi digital. Sebaliknya, pihak yang menentang mengkhawatirkan gangguan konsentrasi, potensi perundungan siber, dan ketergantungan pada teknologi yang mengurangi interaksi sosial siswa.",
+        text: "11. Berikan tanda centang (✓) pada pernyataan yang merupakan isu utama dalam teks tersebut (Jawaban lebih dari satu):",
         options: [
           { key: "A", text: "Manfaat gawai untuk meningkatkan nilai ujian nasional secara instan." },
           { key: "B", text: "Pro dan kontra kebijakan penggunaan gawai di lingkungan sekolah." },
@@ -691,7 +664,7 @@ function doPost(e) {
         part: "Bagian 2: Teks Diskusi",
         type: "matrix",
         stimulus: "Berdasarkan Teks Diskusi 1 (Penggunaan Gawai di Sekolah):",
-        text: "Tentukan Benar atau Salah pernyataan mengenai argumen mendukung (pro) berdasarkan teks!",
+        text: "12. Tentukan Benar atau Salah pernyataan mengenai argumen mendukung (pro) berdasarkan teks!",
         matrixCols: ["Benar", "Salah"],
         matrixRows: [
           { id: "r1", text: "Gawai dapat digunakan sebagai sarana riset materi pelajaran." },
@@ -704,7 +677,7 @@ function doPost(e) {
         part: "Bagian 2: Teks Diskusi",
         type: "complex",
         stimulus: "Berdasarkan Teks Diskusi 1 (Penggunaan Gawai di Sekolah):",
-        text: "Manakah yang termasuk argumen menentang (kontra) penggunaan gawai? (Jawaban lebih dari satu)",
+        text: "13. Manakah yang termasuk argumen menentang (kontra) penggunaan gawai? (Jawaban lebih dari satu)",
         options: [
           { key: "A", text: "Siswa mungkin mengakses konten yang tidak edukatif saat jam pelajaran." },
           { key: "B", text: "Gawai membantu guru mendistribusikan tugas secara digital." },
@@ -717,8 +690,8 @@ function doPost(e) {
         id: 14,
         part: "Bagian 2: Teks Diskusi",
         type: "matrix",
-        stimulus: "Berdasarkan Teks Diskusi 1 (Kohesi dan Koherensi):",
-        text: "Tentukan kesesuaian pernyataan berikut dengan kaidah kohesi dan koherensi teks!",
+        stimulus: "Berdasarkan Teks Diskusi 1 (Kohesi dan Koherensi Teks):",
+        text: "14. Tentukan kesesuaian pernyataan berikut dengan kohesi dan koherensi teks!",
         matrixCols: ["Sesuai", "Tidak Sesuai"],
         matrixRows: [
           { id: "r1", text: "Kata \"Sebaliknya\" digunakan untuk menghubungkan dua sudut pandang yang bertentangan." },
@@ -730,8 +703,8 @@ function doPost(e) {
         id: 15,
         part: "Bagian 2: Teks Diskusi",
         type: "single",
-        stimulus: "Mencari jalan keluar bijak untuk isu perdebatan penggunaan gawai di sekolah.",
-        text: "Solusi netral yang paling tepat untuk permasalahan di atas adalah...",
+        stimulus: "Mencari jalan tengah dari perdebatan penggunaan gawai di sekolah:",
+        text: "15. Solusi netral yang paling tepat untuk permasalahan di atas adalah...",
         options: [
           { key: "A", text: "Melarang total penggunaan gawai tanpa pengecualian." },
           { key: "B", text: "Mengizinkan penggunaan gawai dengan regulasi dan pengawasan ketat untuk tujuan belajar." },
@@ -744,8 +717,8 @@ function doPost(e) {
         id: 16,
         part: "Bagian 2: Teks Diskusi",
         type: "complex",
-        stimulus: "Teks Diskusi 2:\n\nKecerdasan Buatan (AI) kini merambah dunia pendidikan. Penggunaan AI seperti chatbot dianggap membantu siswa memahami konsep sulit dengan cepat. Namun, banyak pendidik khawatir AI akan mematikan kemampuan berpikir kritis dan kreativitas orisinal siswa jika digunakan untuk mengerjakan tugas secara instan.",
-        text: "Isu yang diangkat dalam teks diskusi tersebut adalah... (Jawaban lebih dari satu)",
+        stimulus: "Teks Diskusi 2 (Soal 16-20)\n\nKecerdasan Buatan (AI) kini merambah dunia pendidikan. Penggunaan AI seperti chatbot dianggap membantu siswa memahami konsep sulit dengan cepat. Namun, banyak pendidik khawatir AI akan mematikan kemampuan berpikir kritis dan kreativitas orisinal siswa jika digunakan untuk mengerjakan tugas secara instan.",
+        text: "16. Isu yang diangkat dalam teks diskusi tersebut adalah... (Jawaban lebih dari satu)",
         options: [
           { key: "A", text: "Dampak penggunaan AI terhadap kemampuan berpikir siswa." },
           { key: "B", text: "Perkembangan teknologi robotika di industri manufaktur." },
@@ -758,8 +731,8 @@ function doPost(e) {
         id: 17,
         part: "Bagian 2: Teks Diskusi",
         type: "matrix",
-        stimulus: "Berdasarkan Teks Diskusi 2 (Dampak Kecerdasan Buatan/AI):",
-        text: "Tentukan Benar atau Salah mengenai dampak negatif AI menurut teks!",
+        stimulus: "Berdasarkan Teks Diskusi 2 (Kecerdasan Buatan dalam Pendidikan):",
+        text: "17. Tentukan Benar atau Salah mengenai dampak negatif AI menurut teks!",
         matrixCols: ["Benar", "Salah"],
         matrixRows: [
           { id: "r1", text: "AI dapat menyebabkan siswa malas melakukan riset mandiri." },
@@ -772,7 +745,7 @@ function doPost(e) {
         part: "Bagian 2: Teks Diskusi",
         type: "complex",
         stimulus: "Berdasarkan Teks Diskusi 2 (Kecerdasan Buatan dalam Pendidikan):",
-        text: "Mengapa AI dianggap bermanfaat bagi siswa? (Jawaban lebih dari satu)",
+        text: "18. Mengapa AI dianggap bermanfaat bagi siswa? (Jawaban lebih dari satu)",
         options: [
           { key: "A", text: "Memberikan penjelasan konsep yang sulit dipahami secara cepat." },
           { key: "B", text: "Menghilangkan kebutuhan siswa untuk pergi ke sekolah." },
@@ -785,8 +758,8 @@ function doPost(e) {
         id: 19,
         part: "Bagian 2: Teks Diskusi",
         type: "matrix",
-        stimulus: "Berdasarkan Teks Diskusi 2 (Aspek Kebahasaan):",
-        text: "Tentukan kesesuaian aspek kebahasaan pada teks tersebut!",
+        stimulus: "Berdasarkan Teks Diskusi 2 (Analisis Aspek Kebahasaan):",
+        text: "19. Tentukan kesesuaian aspek kebahasaan pada teks tersebut!",
         matrixCols: ["Sesuai", "Tidak Sesuai"],
         matrixRows: [
           { id: "r1", text: "Kata \"Namun\" berfungsi sebagai konjungsi antarkalimat pertentangan." },
@@ -798,8 +771,8 @@ function doPost(e) {
         id: 20,
         part: "Bagian 2: Teks Diskusi",
         type: "single",
-        stimulus: "Merumuskan simpulan objektif pada teks diskusi kecerdasan buatan.",
-        text: "Simpulan yang bersifat jalan tengah (solusi) adalah...",
+        stimulus: "Berdasarkan Teks Diskusi 2 (Solusi Objektif):",
+        text: "20. Simpulan yang bersifat jalan tengah (solusi) adalah...",
         options: [
           { key: "A", text: "AI harus dilarang dari semua perangkat milik siswa." },
           { key: "B", text: "Siswa harus diajarkan menggunakan AI sebagai alat bantu, bukan pengganti proses berpikir." },
@@ -815,7 +788,7 @@ function doPost(e) {
         part: "Bagian 3: Iklan, Slogan, Poster",
         type: "single",
         stimulus: "Perhatikan ungkapan berikut:\n\n\"Satu Pohon untuk Masa Depan Bumi.\"",
-        text: "Ungkapan di atas lebih tepat dikategorikan sebagai...",
+        text: "21. Ungkapan di atas lebih tepat dikategorikan sebagai...",
         options: [
           { key: "A", text: "Iklan Komersial" },
           { key: "B", text: "Slogan" },
@@ -829,7 +802,7 @@ function doPost(e) {
         part: "Bagian 3: Iklan, Slogan, Poster",
         type: "single",
         stimulus: "Perhatikan deskripsi berikut:\n\nSebuah gambar menunjukkan keran air yang menetes, lalu ada tulisan besar \"HEMAT AIR, HEMAT NYAWA\".",
-        text: "Tujuan komunikatif dari media tersebut adalah...",
+        text: "22. Tujuan komunikatif dari media tersebut adalah...",
         options: [
           { key: "A", text: "Membujuk masyarakat untuk membeli keran air baru." },
           { key: "B", text: "Mengajak masyarakat untuk peduli terhadap ketersediaan air bersih." },
@@ -842,8 +815,8 @@ function doPost(e) {
         id: 23,
         part: "Bagian 3: Iklan, Slogan, Poster",
         type: "single",
-        stimulus: "Kaidah kebahasaan kalimat perintah/ajakan dalam teks persuasi.",
-        text: "Manakah yang merupakan contoh kalimat imperatif dalam sebuah iklan/poster?",
+        stimulus: "Kaidah kebahasaan kalimat imperatif dalam iklan/poster:",
+        text: "23. Manakah yang merupakan contoh kalimat imperatif dalam sebuah iklan/poster?",
         options: [
           { key: "A", text: "Susu ini mengandung kalsium tinggi." },
           { key: "B", text: "Mari kita jaga kebersihan lingkungan!" },
@@ -856,8 +829,8 @@ function doPost(e) {
         id: 24,
         part: "Bagian 3: Iklan, Slogan, Poster",
         type: "single",
-        stimulus: "Perhatikan judul iklan berikut:\n\n\"Beasiswa Prestasi untuk Siswa Kurang Mampu\"",
-        text: "Sasaran audiens dari iklan tersebut adalah...",
+        stimulus: "Sasaran target komunikasi iklan publik:",
+        text: "24. Sasaran audiens dari iklan \"Beasiswa Prestasi untuk Siswa Kurang Mampu\" adalah...",
         options: [
           { key: "A", text: "Pengusaha sukses" },
           { key: "B", text: "Pelajar dan orang tua yang membutuhkan bantuan biaya sekolah" },
@@ -870,8 +843,8 @@ function doPost(e) {
         id: 25,
         part: "Bagian 3: Iklan, Slogan, Poster",
         type: "single",
-        stimulus: "Perbedaan karakteristik media publikasi informasi.",
-        text: "Ciri utama yang membedakan poster dengan iklan di media cetak adalah...",
+        stimulus: "Karakteristik fisik media publikasi informasi:",
+        text: "25. Ciri utama yang membedakan poster dengan iklan di media cetak adalah...",
         options: [
           { key: "A", text: "Poster selalu berukuran kecil." },
           { key: "B", text: "Poster mengutamakan perpaduan gambar dan kata-kata yang dipajang di tempat umum." },
@@ -885,7 +858,7 @@ function doPost(e) {
         part: "Bagian 3: Iklan, Slogan, Poster",
         type: "single",
         stimulus: "Sebuah iklan sabun cuci piring menampilkan kalimat:\n\n\"Hanya butuh satu tetes untuk lemak membandel!\"",
-        text: "Makna tersirat dari kalimat tersebut adalah...",
+        text: "26. Makna tersirat dari kalimat tersebut adalah...",
         options: [
           { key: "A", text: "Sabun tersebut sangat cair." },
           { key: "B", text: "Sabun tersebut sangat hemat dan memiliki daya bersih yang kuat." },
@@ -899,7 +872,7 @@ function doPost(e) {
         part: "Bagian 3: Iklan, Slogan, Poster",
         type: "single",
         stimulus: "Perhatikan slogan legendaris literasi:\n\n\"Buku adalah Jendela Dunia\"",
-        text: "Slogan tersebut memiliki interpretasi makna bahwa...",
+        text: "27. Slogan \"Buku adalah Jendela Dunia\" memiliki interpretasi makna bahwa...",
         options: [
           { key: "A", text: "Membaca buku membuat kita bisa melihat pemandangan di luar rumah." },
           { key: "B", text: "Dengan membaca, kita memperoleh pengetahuan yang sangat luas." },
@@ -912,8 +885,8 @@ function doPost(e) {
         id: 28,
         part: "Bagian 3: Iklan, Slogan, Poster",
         type: "single",
-        stimulus: "Karakteristik teks slogan dalam komunikasi massa.",
-        text: "Unsur yang paling menonjol pada sebuah slogan adalah...",
+        stimulus: "Unsur pembeda pada jenis media slogan:",
+        text: "28. Unsur yang paling menonjol pada sebuah slogan adalah...",
         options: [
           { key: "A", text: "Gambar yang artistik" },
           { key: "B", text: "Kata-kata yang singkat, menarik, dan mudah diingat" },
@@ -926,8 +899,8 @@ function doPost(e) {
         id: 29,
         part: "Bagian 3: Iklan, Slogan, Poster",
         type: "single",
-        stimulus: "Tema Iklan Layanan Masyarakat: Menjaga kesehatan generasi penerus bangsa melalui imunisasi balita.",
-        text: "Kalimat persuasif yang tepat untuk iklan layanan masyarakat tentang imunisasi adalah...",
+        stimulus: "Iklan layanan masyarakat di bidang kesehatan:",
+        text: "29. Kalimat persuasif yang tepat untuk iklan layanan masyarakat tentang imunisasi adalah...",
         options: [
           { key: "A", text: "Imunisasi itu sakit sekali." },
           { key: "B", text: "Jangan lupa bawa anak Anda ke Posyandu untuk imunisasi agar sehat!" },
@@ -940,8 +913,8 @@ function doPost(e) {
         id: 30,
         part: "Bagian 3: Iklan, Slogan, Poster",
         type: "single",
-        stimulus: "Prinsip dasar pembuatan media poster yang komunikatif dan fungsional.",
-        text: "Efektivitas sebuah poster ditentukan oleh...",
+        stimulus: "Kualitas media komunikasi visual di tempat umum:",
+        text: "30. Efektivitas sebuah poster ditentukan oleh...",
         options: [
           { key: "A", text: "Banyaknya jumlah kata yang digunakan." },
           { key: "B", text: "Kejelasan pesan dan daya tarik visual bagi pembaca yang lewat." },
@@ -957,7 +930,7 @@ function doPost(e) {
         part: "Bagian 4: Puisi Rakyat",
         type: "complex",
         stimulus: "Perhatikan kutipan pantun berikut:\n\nBerakit-rakit ke hulu,\nBerenang-renang ke tepian.\nBersakit-sakit dahulu,\nBersenang-senang kemudian.",
-        text: "Tentukan pernyataan yang sesuai dengan struktur fisik pantun di atas! (Jawaban lebih dari satu)",
+        text: "31. Tentukan pernyataan yang sesuai dengan struktur fisik pantun di atas (Jawaban lebih dari satu):",
         options: [
           { key: "A", text: "Terdiri atas empat baris dalam satu bait." },
           { key: "B", text: "Memiliki rima akhir dengan pola a-a-a-a." },
@@ -970,8 +943,8 @@ function doPost(e) {
         id: 32,
         part: "Bagian 4: Puisi Rakyat",
         type: "single",
-        stimulus: "Kutipan Pantun:\n\n\"Berakit-rakit ke hulu, Berenang-renang ke tepian. Bersakit-sakit dahulu, Bersenang-senang kemudian.\"",
-        text: "Berdasarkan isinya, pantun pada nomor 31 termasuk jenis pantun...",
+        stimulus: "Berdasarkan kutipan pantun nomor 31:\n\n\"Berakit-rakit ke hulu,\nBerenang-renang ke tepian.\nBersakit-sakit dahulu,\nBersenang-senang kemudian.\"",
+        text: "32. Berdasarkan isinya, pantun pada nomor 31 termasuk jenis pantun...",
         options: [
           { key: "A", text: "Teka-teki" },
           { key: "B", text: "Nasihat" },
@@ -984,8 +957,8 @@ function doPost(e) {
         id: 33,
         part: "Bagian 4: Puisi Rakyat",
         type: "matrix",
-        stimulus: "Karakteristik struktur dan kaidah puisi rakyat Gurindam:",
-        text: "Tentukan Benar atau Salah mengenai ciri-ciri Gurindam!",
+        stimulus: "Ciri-ciri fisik dan hubungan antarkalimat pada puisi rakyat Gurindam:",
+        text: "33. Tentukan Benar atau Salah mengenai ciri-ciri Gurindam!",
         matrixCols: ["Benar", "Salah"],
         matrixRows: [
           { id: "r1", text: "Gurindam terdiri atas dua baris dalam satu bait." },
@@ -998,7 +971,7 @@ function doPost(e) {
         part: "Bagian 4: Puisi Rakyat",
         type: "complex",
         stimulus: "Kutipan Gurindam:\n\n\"Barang siapa tiada memegang agama,\nSekali-kali tiada boleh dibilangkan nama.\"",
-        text: "Makna dari gurindam tersebut adalah... (Jawaban lebih dari satu)",
+        text: "34. Makna dari gurindam tersebut adalah... (Jawaban lebih dari satu)",
         options: [
           { key: "A", text: "Pentingnya memiliki pedoman hidup atau agama." },
           { key: "B", text: "Orang yang tidak beragama tidak akan dihargai keberadaannya." },
@@ -1012,7 +985,7 @@ function doPost(e) {
         part: "Bagian 4: Puisi Rakyat",
         type: "complex",
         stimulus: "Perhatikan kutipan syair berikut:\n\nDengarlah wahai anakanda,\nRajinlah belajar selagi muda,\nIlmu itu harta nan abadi,\nKelak berguna di kemudian hari.",
-        text: "Ciri syair yang tampak pada kutipan tersebut adalah... (Jawaban lebih dari satu)",
+        text: "35. Ciri syair yang tampak pada kutipan tersebut adalah... (Jawaban lebih dari satu)",
         options: [
           { key: "A", text: "Rima akhirnya berpola a-a-a-a." },
           { key: "B", text: "Baris 1 dan 2 adalah sampiran." },
@@ -1025,8 +998,8 @@ function doPost(e) {
         id: 36,
         part: "Bagian 4: Puisi Rakyat",
         type: "matrix",
-        stimulus: "Perbandingan jumlah baris bait pada genre puisi rakyat tradisional:",
-        text: "Tentukan kesesuaian antara jenis puisi rakyat dan deskripsi jumlah barisnya!",
+        stimulus: "Perbandingan jumlah baris per bait pada jenis puisi rakyat:",
+        text: "36. Tentukan kesesuaian antara jenis puisi rakyat dan jumlah barisnya!",
         matrixCols: ["Sesuai", "Tidak Sesuai"],
         matrixRows: [
           { id: "r1", text: "Pantun : Terdiri atas 4 baris per bait." },
@@ -1038,8 +1011,8 @@ function doPost(e) {
         id: 37,
         part: "Bagian 4: Puisi Rakyat",
         type: "single",
-        stimulus: "Perhatikan pantun berikut:\n\nAda sebiji roda pedati,\nBentuknya bulat daripada besi.\nBila bermain senanglah hati,\nBenda apakah yang saya maksudkan ini?",
-        text: "Nilai kontekstual dari penggunaan pantun teka-teki di tengah masyarakat adalah...",
+        stimulus: "Pantun Teka-teki:\n\nAda sebiji roda pedati,\nBentuknya bulat daripada besi.\nBila bermain senanglah hati,\nBenda apakah yang saya maksudkan ini?",
+        text: "37. Nilai kontekstual dari penggunaan pantun teka-teki di masyarakat adalah...",
         options: [
           { key: "A", text: "Untuk memarahi orang lain secara halus." },
           { key: "B", text: "Sebagai sarana hiburan dan mengasah otak dalam pergaulan." },
@@ -1052,8 +1025,8 @@ function doPost(e) {
         id: 38,
         part: "Bagian 4: Puisi Rakyat",
         type: "complex",
-        stimulus: "Kutipan Gurindam:\n\n\"Apabila terpelihara lidah,\nNiscaya dapat daripadanya faedah.\"",
-        text: "Apa pesan moral yang disampaikan gurindam tersebut? (Jawaban lebih dari satu)",
+        stimulus: "Kutipan Gurindam:\n\n\"Apabila terpelihara lidah,\nniscaya dapat daripadanya faedah.\"",
+        text: "38. Kutipan di atas merupakan contoh Gurindam. Apa pesan moral yang disampaikan? (Jawaban lebih dari satu)",
         options: [
           { key: "A", text: "Kita harus menjaga ucapan agar mendapatkan manfaat atau kebaikan." },
           { key: "B", text: "Lidah harus selalu dibersihkan dengan sikat gigi." },
@@ -1066,8 +1039,8 @@ function doPost(e) {
         id: 39,
         part: "Bagian 4: Puisi Rakyat",
         type: "matrix",
-        stimulus: "Menganalisis perbedaan struktur Pantun dan Syair:",
-        text: "Tentukan Benar atau Salah mengenai perbedaan Pantun dan Syair!",
+        stimulus: "Menganalisis perbedaan karakteristik struktur Pantun dan Syair:",
+        text: "39. Tentukan Benar atau Salah mengenai perbedaan Pantun dan Syair!",
         matrixCols: ["Benar", "Salah"],
         matrixRows: [
           { id: "r1", text: "Pantun punya sampiran, sedangkan syair semua barisnya isi." },
@@ -1079,8 +1052,8 @@ function doPost(e) {
         id: 40,
         part: "Bagian 4: Puisi Rakyat",
         type: "single",
-        stimulus: "Pertanyaan Analisis HOTS (Higher Order Thinking Skills):\n\nNilai moral dalam puisi rakyat seringkali masih relevan di masa kini.",
-        text: "Mengapa nilai moral puisi rakyat tetap relevan sepanjang masa?",
+        stimulus: "Pertanyaan Analisis HOTS (Higher Order Thinking Skills):",
+        text: "40. Nilai moral dalam puisi rakyat seringkali masih relevan di masa kini (HOTS). Mengapa demikian?",
         options: [
           { key: "A", text: "Karena puisi rakyat hanya berisi tentang sejarah masa lalu." },
           { key: "B", text: "Karena nilai-nilai budi pekerti dan ketuhanan bersifat universal dan abadi." },
@@ -1095,220 +1068,208 @@ function doPost(e) {
       name: "",
       studentClass: "",
       absen: "",
-      school: ""
+      school: "SMP NEGERI"
     };
 
-    let studentAnswers = {}; // { qId: ["A"] } or { qId: { r1: "Benar", r2: "Salah" } }
-    let studentDoubts = {};  // { qId: true/false }
-    let currentIndex = 0;
-    let timerTimerId = null;
-    let secondsLeft = 65 * 60; // 65 Menit = 3900 detik
-    let isExamRunning = false;
-    let isExamSubmitted = false;
+    let userAnswers = {}; // { 1: ["C"], 11: ["B", "C"], 12: { r1: "Benar", r2: "Salah" } }
+    let doubtFlags = {};  // { 1: true/false }
+    let activeIndex = 0;
+    let timerDuration = 65 * 60; // 65 Menit = 3900 detik
+    let timerCountdown = null;
+    let isExamActive = false;
+    let isExamFinished = false;
 
-    // Pelanggaran & Web Audio Alarm System
-    let violationCounter = 0;
-    let violationHistory = [];
-    let audioCtx = null;
-    let sirenInterval = null;
+    // Pelanggaran & Log Kejujuran
+    let countViolations = 0;
+    let logsViolations = [];
+    let audioContext = null;
+    let sirenIntervalId = null;
 
-    let targetSheetWebhook = "https://script.google.com/macros/s/AKfycbwmoQqEMn-3wqJKi99WDZi4Mioe_ci6p0xUjpYRHdRbA1v3TCEsSDqLuXl1xCVtPd8/exec";
+    let webhookSheetUrl = "https://script.google.com/macros/s/AKfycbwmoQqEMn-3wqJKi99WDZi4Mioe_ci6p0xUjpYRHdRbA1v3TCEsSDqLuXl1xCVtPd8/exec";
 
-    function initWebAudio() {
-      if (!audioCtx) {
-        const AudioClass = window.AudioContext || window.webkitAudioContext;
-        if (AudioClass) {
-          audioCtx = new AudioClass();
-        }
-      }
-      if (audioCtx && audioCtx.state === 'suspended') {
-        audioCtx.resume();
+    function saveExamSessionBackup() {
+      try {
+        if (!isExamActive || isExamFinished) return;
+        const backup = {
+          studentData,
+          userAnswers,
+          doubtFlags,
+          activeIndex,
+          timerDuration,
+          countViolations,
+          logsViolations
+        };
+        sessionStorage.setItem('cbt_asts_ix_session', JSON.stringify(backup));
+      } catch (err) {
+        console.warn("Storage warning:", err);
       }
     }
 
-    // Aktifkan sirine terus-menerus selama modal kecurangan aktif
+    function initAudio() {
+      try {
+        if (!audioContext) {
+          const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+          if (AudioContextClass) {
+            audioContext = new AudioContextClass();
+          }
+        }
+        if (audioContext && audioContext.state === 'suspended') {
+          audioContext.resume();
+        }
+      } catch (err) {
+        console.warn("Audio Context init error:", err);
+      }
+    }
+
+    function playSirenSound() {
+      try {
+        initAudio();
+        if (!audioContext) return;
+
+        const osc = audioContext.createOscillator();
+        const gain = audioContext.createGain();
+        osc.type = 'sawtooth';
+
+        const now = audioContext.currentTime;
+        osc.frequency.setValueAtTime(800, now);
+        osc.frequency.linearRampToValueAtTime(1250, now + 0.3);
+        osc.frequency.linearRampToValueAtTime(800, now + 0.6);
+
+        gain.gain.setValueAtTime(0.35, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.6);
+
+        osc.connect(gain);
+        gain.connect(audioContext.destination);
+
+        osc.start(now);
+        osc.stop(now + 0.6);
+      } catch (err) {
+        console.warn("Siren sound error:", err);
+      }
+    }
+
     function startContinuousSiren() {
-      initWebAudio();
-      stopContinuousSiren();
-      playSirenTone();
-      sirenInterval = setInterval(playSirenTone, 1100);
+      if (sirenIntervalId) return;
+      playSirenSound();
+      sirenIntervalId = setInterval(() => {
+        playSirenSound();
+      }, 650);
     }
 
     function stopContinuousSiren() {
-      if (sirenInterval) {
-        clearInterval(sirenInterval);
-        sirenInterval = null;
+      if (sirenIntervalId) {
+        clearInterval(sirenIntervalId);
+        sirenIntervalId = null;
       }
     }
 
-    function playSirenTone() {
-      try {
-        if (!audioCtx) return;
-        if (audioCtx.state === 'suspended') audioCtx.resume();
+    function triggerViolation(reason) {
+      if (!isExamActive || isExamFinished) return;
 
-        const now = audioCtx.currentTime;
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-
-        osc.type = 'sawtooth';
-        osc.frequency.setValueAtTime(750, now);
-        osc.frequency.linearRampToValueAtTime(1400, now + 0.25);
-        osc.frequency.linearRampToValueAtTime(750, now + 0.5);
-        osc.frequency.linearRampToValueAtTime(1400, now + 0.75);
-        osc.frequency.linearRampToValueAtTime(750, now + 1.0);
-
-        gain.gain.setValueAtTime(0.45, now);
-        gain.gain.exponentialRampToValueAtTime(0.01, now + 1.05);
-
-        osc.connect(gain);
-        gain.connect(audioCtx.destination);
-        osc.start(now);
-        osc.stop(now + 1.05);
-      } catch (err) {
-        console.warn("Audio synthesis:", err);
-      }
-    }
-
-    function recordViolationEvent(reason) {
-      if (!isExamRunning || isExamSubmitted) return;
-
-      violationCounter++;
+      countViolations++;
       const timeStr = new Date().toLocaleTimeString('id-ID');
-      const entry = `[${timeStr}] ${reason}`;
-      violationHistory.push(entry);
+      logsViolations.push(`[${timeStr}] ${reason}`);
 
-      // Bunyikan Sirine Darurat Terus Menerus
+      saveExamSessionBackup();
       startContinuousSiren();
 
-      // Perbarui UI Pelanggaran
-      const badgeElem = document.getElementById('badgeViolationCount');
-      if (badgeElem) {
-        badgeElem.textContent = `${violationCounter}x`;
-        badgeElem.className = 'text-base font-black px-3 py-1 rounded-xl bg-rose-100 text-rose-800 font-mono-num animate-pulse ring-2 ring-rose-400';
+      const badgeCount = document.getElementById('badgeViolationCount');
+      if (badgeCount) {
+        badgeCount.textContent = `${countViolations}x`;
+        badgeCount.className = "text-base font-black px-3 py-1 rounded-xl bg-rose-100 text-rose-700 font-mono-num animate-pulse";
       }
 
-      // Tampilkan Modal Peringatan
-      document.getElementById('modalViolationNum').textContent = `${violationCounter}x`;
-      document.getElementById('modalViolation').classList.remove('hidden');
+      const modalNum = document.getElementById('modalViolationNum');
+      if (modalNum) modalNum.textContent = `${countViolations}x`;
 
-      // Update badge header
-      const honestyBadge = document.getElementById('badgeHonestyStatus');
-      const honestyText = document.getElementById('badgeHonestyText');
-      if (honestyBadge && honestyText) {
-        honestyBadge.className = 'flex items-center gap-1.5 px-3 py-1 bg-rose-500/20 text-rose-300 border border-rose-400/40 rounded-full text-xs font-bold';
-        honestyText.textContent = `Pelanggaran: ${violationCounter}x`;
+      const modal = document.getElementById('modalViolation');
+      if (modal) modal.classList.remove('hidden');
+
+      const badgeHonesty = document.getElementById('badgeHonestyStatus');
+      const textHonesty = document.getElementById('badgeHonestyText');
+      if (badgeHonesty && textHonesty) {
+        badgeHonesty.className = "flex items-center gap-1.5 px-3 py-1 bg-rose-500/20 text-rose-300 border border-rose-400/40 rounded-full text-xs font-bold";
+        textHonesty.textContent = `Pelanggaran: ${countViolations}x`;
       }
     }
 
-    function attachAntiCheatListeners() {
-      // 1. Trap Tombol Kembali (Back Navigation)
+    function lockFullscreen() {
+      const el = document.documentElement;
+      if (el.requestFullscreen) {
+        el.requestFullscreen().catch(() => {});
+      } else if (el.webkitRequestFullscreen) {
+        el.webkitRequestFullscreen();
+      } else if (el.msRequestFullscreen) {
+        el.msRequestFullscreen();
+      }
+    }
+
+    function setupAntiCheatTraps() {
       window.history.pushState(null, null, window.location.href);
-      window.addEventListener('popstate', () => {
-        if (isExamRunning && !isExamSubmitted) {
+      window.addEventListener('popstate', function () {
+        if (isExamActive && !isExamFinished) {
           window.history.pushState(null, null, window.location.href);
-          recordViolationEvent("Mencoba menekan tombol Back / Swipe kembali");
+          triggerViolation("Mencoba menekan tombol kembali (Back Button)");
         }
       });
 
-      // 2. Deteksi Keluar Tab Browser / Aplikasi di Minimalkan
-      document.addEventListener('visibilitychange', () => {
-        if (document.hidden && isExamRunning && !isExamSubmitted) {
-          recordViolationEvent("Meninggalkan tab asesmen (Pindah Aplikasi/Buka Tab Baru)");
-        }
-      });
-
-      // 3. Deteksi Window Blur (Klik di luar browser / split-screen)
-      window.addEventListener('blur', () => {
-        if (isExamRunning && !isExamSubmitted) {
-          recordViolationEvent("Fokus layar hilang (Membuka floating window / aplikasi lain)");
-        }
-      });
-
-      // 4. Deteksi Keluar dari Fullscreen (Mode Layar Penuh Ditinggalkan)
-      document.addEventListener('fullscreenchange', () => {
-        if (!document.fullscreenElement && isExamRunning && !isExamSubmitted) {
-          recordViolationEvent("Keluar dari mode Layar Penuh (Fullscreen dihentikan)");
-        }
-      });
-      document.addEventListener('webkitfullscreenchange', () => {
-        if (!document.webkitFullscreenElement && isExamRunning && !isExamSubmitted) {
-          recordViolationEvent("Keluar dari mode Layar Penuh (Fullscreen dihentikan)");
-        }
-      });
-
-      // 5. Cegah Klik Kanan
-      document.addEventListener('contextmenu', (e) => {
-        if (isExamRunning) {
+      window.addEventListener('beforeunload', function (e) {
+        if (isExamActive && !isExamFinished) {
           e.preventDefault();
+          e.returnValue = 'Ujian sedang berlangsung! Jika Anda keluar sekarang, ujian akan tercatat.';
+          return e.returnValue;
+        }
+      });
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden && isExamActive && !isExamFinished) {
+          triggerViolation("Meninggalkan tab browser (Pindah Tab/Membuka Aplikasi Lain)");
+        }
+      });
+
+      window.addEventListener("blur", () => {
+        if (isExamActive && !isExamFinished) {
+          triggerViolation("Kehilangan fokus layar (Split Screen / Jendela Lain)");
+        }
+      });
+
+      document.addEventListener("contextmenu", (e) => {
+        if (isExamActive) e.preventDefault();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (!isExamActive) return;
+        if (e.key === "F12") {
+          e.preventDefault();
+          triggerViolation("Mencoba shortcut F12 (Inspect Element)");
           return false;
         }
-      });
-
-      // 6. Cegah Shortcut Keyboard (F12, Inspect, Copy, Paste, Print, Select All)
-      document.addEventListener('keydown', (e) => {
-        if (!isExamRunning) return;
-
-        if (e.key === 'F12') {
-          e.preventDefault();
-          recordViolationEvent("Mencoba membuka inspect element (F12)");
-          return false;
-        }
-
         if (e.ctrlKey || e.metaKey) {
           const k = e.key.toLowerCase();
-          if (['c', 'v', 'u', 's', 'p', 'a', 'x', 'j', 'i'].includes(k)) {
+          if (k === 'c' || k === 'v' || k === 'u' || k === 's' || k === 'p' || k === 'shift') {
             e.preventDefault();
-            recordViolationEvent(`Mencoba pintasan keyboard (${e.ctrlKey ? 'Ctrl+' : 'Cmd+'}${k.toUpperCase()})`);
+            triggerViolation(`Menekan shortcut terlarang (${e.ctrlKey ? 'Ctrl+' : 'Cmd+'}${k.toUpperCase()})`);
             return false;
           }
         }
       });
-
-      // 7. Konfirmasi jika mencoba me-reload halaman
-      window.addEventListener('beforeunload', (e) => {
-        if (isExamRunning && !isExamSubmitted) {
-          e.preventDefault();
-          e.returnValue = 'Asesmen sedang berjalan! Jika Anda keluar, lembar jawaban akan terkirim.';
-          return e.returnValue;
-        }
-      });
     }
 
-    function lockToFullscreen() {
-      const docEl = document.documentElement;
-      if (docEl.requestFullscreen) {
-        docEl.requestFullscreen().catch(() => {});
-      } else if (docEl.webkitRequestFullscreen) {
-        docEl.webkitRequestFullscreen();
-      } else if (docEl.msRequestFullscreen) {
-        docEl.msRequestFullscreen();
-      }
-    }
-
-    const nameInputField = document.getElementById('inputStudentName');
-    // Memaksa setiap ketikan langsung menjadi HURUF BESAR / KAPITAL
-    nameInputField.addEventListener('input', (e) => {
+    const nameInput = document.getElementById('inputStudentName');
+    nameInput.addEventListener('input', (e) => {
       e.target.value = e.target.value.toUpperCase();
     });
 
     document.getElementById('formRegistration').addEventListener('submit', (e) => {
       e.preventDefault();
 
-      const nameVal = nameInputField.value.trim().toUpperCase();
+      const nameVal = nameInput.value.trim().toUpperCase();
       const classVal = document.getElementById('selectStudentClass').value;
       const absenVal = document.getElementById('inputAbsen').value.trim();
       const schoolVal = document.getElementById('inputSchoolName').value.trim().toUpperCase() || "SMP NEGERI";
 
-      if (!nameVal) {
-        displayToastNotice("Silakan tulis Nama Siswa sesuai presensi!");
-        return;
-      }
-      if (!classVal) {
-        displayToastNotice("Silakan pilih Kelas IX Anda!");
-        return;
-      }
-      if (!absenVal) {
-        displayToastNotice("Silakan masukkan Nomor Presensi!");
+      if (!nameVal || !classVal || !absenVal) {
+        showFloatingToast("Lengkapi Nama, Kelas, dan Nomor Absen terlebih dahulu!");
         return;
       }
 
@@ -1319,83 +1280,88 @@ function doPost(e) {
         school: schoolVal
       };
 
-      // Aktifkan Audio & Proteksi Layar
-      initWebAudio();
-      lockToFullscreen();
-      attachAntiCheatListeners();
-
-      // Luncurkan Ruang Asesmen
-      launchExamSession();
+      initAudio();
+      lockFullscreen();
+      setupAntiCheatTraps();
+      startExamProcess();
     });
 
-    function launchExamSession() {
-      isExamRunning = true;
+    function startExamProcess() {
+      isExamActive = true;
 
-      // Update Identitas Siswa di Sidebar
       document.getElementById('sideStudentName').textContent = studentData.name;
       document.getElementById('sideStudentClass').textContent = studentData.studentClass;
       document.getElementById('sideStudentAbsen').textContent = studentData.absen;
 
-      // Alihkan Layar
       document.getElementById('sectionRegistration').classList.add('hidden');
-      document.getElementById('sectionExamArena').classList.remove('hidden');
-      document.getElementById('sectionExamArena').classList.add('grid');
+      const arena = document.getElementById('sectionExamArena');
+      arena.classList.remove('hidden');
+      arena.classList.add('grid');
+
       document.getElementById('badgeHonestyStatus').classList.remove('hidden');
       document.getElementById('badgeHonestyStatus').classList.add('flex');
 
-      // Bangun 40 Kisi Navigasi & Tampilkan Soal No 1
-      generateNavigationGrid();
-      displayQuestionByIndex(currentIndex);
-
-      // Mulai Countdown Timer 45 Menit
-      initCountdownTimer();
+      generateQuestionPalette();
+      renderActiveQuestion();
+      startCountdownTimer();
     }
 
-    function initCountdownTimer() {
-      const timerDisplay = document.getElementById('timerText');
-
-      timerTimerId = setInterval(() => {
-        secondsLeft--;
-
-        const mins = Math.floor(secondsLeft / 60);
-        const secs = secondsLeft % 60;
-        const formatted = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-        timerDisplay.textContent = formatted;
-
-        // Peringatan jika waktu tersisa < 5 Menit
-        if (secondsLeft <= 300 && secondsLeft > 60) {
-          timerDisplay.parentElement.classList.remove('text-indigo-800');
-          timerDisplay.parentElement.classList.add('text-amber-600');
-        } else if (secondsLeft <= 60) {
-          timerDisplay.parentElement.classList.remove('text-amber-600');
-          timerDisplay.parentElement.classList.add('text-rose-600', 'animate-pulse');
+    function startCountdownTimer() {
+      const timerText = document.getElementById('timerText');
+      timerCountdown = setInterval(() => {
+        timerDuration--;
+        if (timerDuration % 5 === 0) {
+          saveExamSessionBackup();
         }
 
-        // Waktu Habis: Selesai otomatis
-        if (secondsLeft <= 0) {
-          clearInterval(timerTimerId);
-          isExamRunning = false;
-          displayToastNotice("Waktu 65 Menit Telah Habis! Berkas jawaban otomatis dikirim.");
+        const minutes = Math.floor(timerDuration / 60);
+        const seconds = timerDuration % 60;
+        timerText.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+        if (timerDuration <= 300 && timerDuration > 60) {
+          timerText.classList.remove('text-indigo-800');
+          timerText.classList.add('text-amber-600');
+        } else if (timerDuration <= 60) {
+          timerText.classList.remove('text-amber-600');
+          timerText.classList.add('text-rose-600', 'animate-pulse');
+        }
+
+        if (timerDuration <= 0) {
+          clearInterval(timerCountdown);
+          isExamActive = false;
+          showFloatingToast("Waktu 65 Menit Telah Habis! Berkas otomatis dikirim.");
           setTimeout(() => {
-            submitFinalExam();
-          }, 1500);
+            finishAndEvaluateExam();
+          }, 1200);
         }
       }, 1000);
     }
 
-    function generateNavigationGrid() {
-      const grid = document.getElementById('gridQuestionButtons');
-      grid.innerHTML = '';
+    function generateQuestionPalette() {
+      const palette = document.getElementById('gridQuestionButtons');
+      palette.innerHTML = '';
 
       EXAM_QUESTIONS.forEach((q, idx) => {
         const btn = document.createElement('button');
         btn.type = 'button';
-        btn.id = `qGridBtn_${idx}`;
-        
-        btn.className = getGridButtonClasses(q, idx);
+        btn.id = `paletteBtn_${idx}`;
+
+        const isDoubt = !!doubtFlags[q.id];
+        const isAnswered = isQuestionFullyAnswered(q);
+        const isCurrent = idx === activeIndex;
+
+        let styleClass = 'bg-slate-100 text-slate-700 hover:bg-slate-200 border-slate-300';
+        if (isCurrent) {
+          styleClass = 'bg-indigo-100 text-indigo-950 border-indigo-600 ring-2 ring-indigo-400 font-black';
+        } else if (isDoubt) {
+          styleClass = 'bg-amber-400 text-slate-950 border-amber-500 font-black';
+        } else if (isAnswered) {
+          styleClass = 'bg-indigo-600 text-white border-indigo-700 font-bold';
+        }
+
+        btn.className = `p-2 rounded-xl font-mono-num text-xs border transition flex items-center justify-center relative ${styleClass}`;
         btn.innerHTML = `${q.id}`;
 
-        // Indikator Soal Kompleks / Matrix
         if (q.type === 'complex' || q.type === 'matrix') {
           const dot = document.createElement('span');
           dot.className = "absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-purple-500";
@@ -1403,59 +1369,57 @@ function doPost(e) {
         }
 
         btn.addEventListener('click', () => {
-          currentIndex = idx;
-          displayQuestionByIndex(currentIndex);
+          activeIndex = idx;
+          renderActiveQuestion();
         });
 
-        grid.appendChild(btn);
+        palette.appendChild(btn);
       });
 
-      refreshAnsweredCount();
-    }
-
-    function getGridButtonClasses(q, idx) {
-      const isDoubt = !!studentDoubts[q.id];
-      const isAnswered = isQuestionFullyAnswered(q);
-      const isCurrent = idx === currentIndex;
-
-      let base = "p-2 rounded-xl font-mono-num text-xs font-bold border transition flex items-center justify-center relative ";
-
-      if (isCurrent) {
-        if (isDoubt) return base + "bg-amber-400 text-slate-950 border-amber-600 ring-2 ring-amber-300 shadow";
-        if (isAnswered) return base + "bg-indigo-600 text-white border-indigo-700 ring-2 ring-indigo-300 shadow";
-        return base + "bg-white text-indigo-900 border-indigo-600 ring-2 ring-indigo-300 shadow font-black";
-      }
-
-      if (isDoubt) return base + "bg-amber-400 text-slate-950 border-amber-500 font-black";
-      if (isAnswered) return base + "bg-indigo-600 text-white border-indigo-700 font-black";
-      return base + "bg-slate-100 text-slate-700 hover:bg-slate-200 border-slate-300";
+      refreshAnsweredBadge();
     }
 
     function isQuestionFullyAnswered(q) {
-      const ans = studentAnswers[q.id];
+      const ans = userAnswers[q.id];
       if (!ans) return false;
-
       if (q.type === 'single' || q.type === 'complex') {
         return Array.isArray(ans) && ans.length > 0;
       }
       if (q.type === 'matrix') {
-        // Harus semua baris terisi
-        return Object.keys(ans).length === q.matrixRows.length;
+        return q.matrixRows.every(row => ans[row.id] !== undefined);
       }
       return false;
     }
 
-    function updateAllGridStatus() {
+    function refreshPaletteHighlight() {
       EXAM_QUESTIONS.forEach((q, idx) => {
-        const btn = document.getElementById(`qGridBtn_${idx}`);
-        if (btn) {
-          btn.className = getGridButtonClasses(q, idx);
+        const btn = document.getElementById(`paletteBtn_${idx}`);
+        if (!btn) return;
+
+        const isDoubt = !!doubtFlags[q.id];
+        const isAnswered = isQuestionFullyAnswered(q);
+        const isCurrent = idx === activeIndex;
+
+        let styleClass = 'bg-slate-100 text-slate-700 hover:bg-slate-200 border-slate-300';
+        if (isCurrent) {
+          styleClass = isDoubt
+            ? 'bg-amber-400 text-slate-950 border-amber-600 ring-2 ring-amber-300 font-black shadow'
+            : (isAnswered
+                ? 'bg-indigo-600 text-white border-indigo-800 ring-2 ring-indigo-300 font-black shadow'
+                : 'bg-white text-indigo-950 border-indigo-600 ring-2 ring-indigo-200 font-black shadow');
+        } else if (isDoubt) {
+          styleClass = 'bg-amber-400 text-slate-950 border-amber-500 font-black';
+        } else if (isAnswered) {
+          styleClass = 'bg-indigo-600 text-white border-indigo-700 font-bold';
         }
+
+        btn.className = `p-2 rounded-xl font-mono-num text-xs border transition flex items-center justify-center relative ${styleClass}`;
       });
-      refreshAnsweredCount();
+
+      refreshAnsweredBadge();
     }
 
-    function refreshAnsweredCount() {
+    function refreshAnsweredBadge() {
       let count = 0;
       EXAM_QUESTIONS.forEach(q => {
         if (isQuestionFullyAnswered(q)) count++;
@@ -1463,201 +1427,200 @@ function doPost(e) {
       document.getElementById('counterAnswered').textContent = `${count} / 40 Terjawab`;
     }
 
-    function displayQuestionByIndex(index) {
-      const q = EXAM_QUESTIONS[index];
+    function renderActiveQuestion() {
+      const q = EXAM_QUESTIONS[activeIndex];
       if (!q) return;
 
-      // Header No Soal & Kategori
       document.getElementById('badgeActiveNumber').textContent = `SOAL NO. ${q.id}`;
       document.getElementById('badgeActiveCategory').textContent = q.part;
 
-      // Status Ragu-Ragu
+      // Update Ragu-Ragu Button
       const btnDoubt = document.getElementById('btnToggleDoubt');
       const textDoubt = document.getElementById('textDoubt');
-      if (studentDoubts[q.id]) {
-        btnDoubt.className = "px-3 py-1.5 rounded-xl border border-amber-500 text-amber-950 bg-amber-400 hover:bg-amber-500 text-xs font-black transition flex items-center gap-1.5 shadow-sm";
+      if (doubtFlags[q.id]) {
+        btnDoubt.className = "px-3 py-1.5 rounded-xl border text-xs font-black transition flex items-center gap-1.5 border-amber-500 text-amber-950 bg-amber-400 shadow-sm";
         textDoubt.textContent = "Status: Ragu-Ragu";
       } else {
-        btnDoubt.className = "px-3 py-1.5 rounded-xl border border-slate-300 text-slate-600 bg-slate-50 hover:bg-slate-100 text-xs font-bold transition flex items-center gap-1.5";
+        btnDoubt.className = "px-3 py-1.5 rounded-xl border text-xs font-bold transition flex items-center gap-1.5 border-slate-300 text-slate-600 bg-slate-50 hover:bg-slate-100";
         textDoubt.textContent = "Tandai Ragu-Ragu";
       }
 
       // Render Stimulus & Pertanyaan
-      const bodyBox = document.getElementById('activeQuestionBody');
-      bodyBox.innerHTML = '';
+      const bodyContainer = document.getElementById('activeQuestionBody');
+      bodyContainer.innerHTML = '';
 
       if (q.stimulus) {
-        const stimDiv = document.createElement('div');
-        stimDiv.className = "p-4 bg-slate-50 border border-slate-200 rounded-2xl text-slate-800 text-xs sm:text-sm whitespace-pre-line font-medium leading-relaxed shadow-xs";
-        stimDiv.textContent = q.stimulus;
-        bodyBox.appendChild(stimDiv);
+        const stimulusBox = document.createElement('div');
+        stimulusBox.className = "p-4 bg-slate-50 border border-slate-200 rounded-2xl text-slate-700 leading-relaxed font-normal whitespace-pre-line text-sm sm:text-base mb-3";
+        stimulusBox.textContent = q.stimulus;
+        bodyContainer.appendChild(stimulusBox);
       }
 
       const qText = document.createElement('div');
-      qText.className = "font-bold text-slate-900 text-sm sm:text-base leading-snug pt-1";
+      qText.className = "font-bold text-slate-900 text-sm sm:text-base leading-snug";
       qText.textContent = q.text;
-      bodyBox.appendChild(qText);
+      bodyContainer.appendChild(qText);
 
-      // Render Opsi Jawaban Sesuai Tipe Soal
+      // Render Opsi Jawaban
       const optContainer = document.getElementById('activeOptionsContainer');
       optContainer.innerHTML = '';
 
-      if (q.type === 'single' || q.type === 'complex') {
-        renderStandardOptions(q, optContainer);
+      if (q.type === 'single') {
+        const selected = (userAnswers[q.id] || [])[0] || null;
+        q.options.forEach(opt => {
+          const isChecked = selected === opt.key;
+          const label = document.createElement('label');
+          label.className = `flex items-start gap-3 p-3.5 sm:p-4 rounded-2xl border-2 transition cursor-pointer select-none ${
+            isChecked 
+              ? 'border-indigo-600 bg-indigo-50/80 ring-1 ring-indigo-500 shadow-sm' 
+              : 'border-slate-200 hover:border-indigo-300 hover:bg-slate-50'
+          }`;
+
+          label.innerHTML = `
+            <div class="flex items-center h-6">
+              <input type="radio" name="option_q${q.id}" value="${opt.key}" ${isChecked ? 'checked' : ''}
+                class="w-4 h-4 text-indigo-600 focus:ring-indigo-500 border-slate-300">
+            </div>
+            <div class="text-xs sm:text-sm font-semibold text-slate-800 leading-relaxed flex-1">
+              <span class="inline-block w-6 font-black text-indigo-900">${opt.key}.</span>
+              ${escapeHtml(opt.text)}
+            </div>
+          `;
+
+          label.querySelector('input').addEventListener('change', () => {
+            userAnswers[q.id] = [opt.key];
+            saveExamSessionBackup();
+            renderActiveQuestion();
+          });
+
+          optContainer.appendChild(label);
+        });
+      } else if (q.type === 'complex') {
+        const selected = userAnswers[q.id] || [];
+        q.options.forEach(opt => {
+          const isChecked = selected.includes(opt.key);
+          const label = document.createElement('label');
+          label.className = `flex items-start gap-3 p-3.5 sm:p-4 rounded-2xl border-2 transition cursor-pointer select-none ${
+            isChecked 
+              ? 'border-indigo-600 bg-indigo-50/80 ring-1 ring-indigo-500 shadow-sm' 
+              : 'border-slate-200 hover:border-indigo-300 hover:bg-slate-50'
+          }`;
+
+          label.innerHTML = `
+            <div class="flex items-center h-6">
+              <input type="checkbox" name="option_q${q.id}" value="${opt.key}" ${isChecked ? 'checked' : ''}
+                class="w-4 h-4 text-indigo-600 focus:ring-indigo-500 rounded border-slate-300">
+            </div>
+            <div class="text-xs sm:text-sm font-semibold text-slate-800 leading-relaxed flex-1">
+              <span class="inline-block w-6 font-black text-indigo-900">${opt.key}.</span>
+              ${escapeHtml(opt.text)}
+            </div>
+          `;
+
+          label.querySelector('input').addEventListener('change', (e) => {
+            if (!Array.isArray(userAnswers[q.id])) userAnswers[q.id] = [];
+            if (e.target.checked) {
+              if (!userAnswers[q.id].includes(opt.key)) userAnswers[q.id] = [];
+              userAnswers[q.id].push(opt.key);
+            } else {
+              userAnswers[q.id] = userAnswers[q.id].filter(k => k !== opt.key);
+            }
+            saveExamSessionBackup();
+            renderActiveQuestion();
+          });
+
+          optContainer.appendChild(label);
+        });
       } else if (q.type === 'matrix') {
-        renderMatrixOptions(q, optContainer);
+        const tableWrapper = document.createElement('div');
+        tableWrapper.className = "overflow-x-auto border border-slate-200 rounded-2xl bg-white shadow-sm";
+
+        let tableHtml = `
+          <table class="w-full text-left border-collapse text-xs sm:text-sm">
+            <thead>
+              <tr class="bg-slate-100 text-slate-700 border-b border-slate-200">
+                <th class="p-3 sm:p-4 font-black">Pernyataan Analisis</th>
+                ${q.matrixCols.map(c => `<th class="p-3 text-center font-black w-24 sm:w-28">${escapeHtml(c)}</th>`).join('')}
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 font-medium text-slate-800">
+        `;
+
+        const rowAnswers = userAnswers[q.id] || {};
+
+        q.matrixRows.forEach(row => {
+          tableHtml += `
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 sm:p-4 leading-relaxed">${escapeHtml(row.text)}</td>
+              ${q.matrixCols.map(col => {
+                const checked = rowAnswers[row.id] === col ? 'checked' : '';
+                return `
+                  <td class="p-3 text-center">
+                    <input type="radio" name="matrix_${q.id}_${row.id}" value="${col}" ${checked}
+                      data-qid="${q.id}" data-rowid="${row.id}"
+                      class="w-4 h-4 text-indigo-600 focus:ring-indigo-500 border-slate-300 cursor-pointer">
+                  </td>
+                `;
+              }).join('')}
+            </tr>
+          `;
+        });
+
+        tableHtml += `</tbody></table>`;
+        tableWrapper.innerHTML = tableHtml;
+
+        tableWrapper.querySelectorAll('input').forEach(input => {
+          input.addEventListener('change', (e) => {
+            const qId = e.target.getAttribute('data-qid');
+            const rowId = e.target.getAttribute('data-rowid');
+            const val = e.target.value;
+
+            if (!userAnswers[qId] || Array.isArray(userAnswers[qId])) {
+              userAnswers[qId] = {};
+            }
+            userAnswers[qId][rowId] = val;
+            saveExamSessionBackup();
+            refreshPaletteHighlight();
+          });
+        });
+
+        optContainer.appendChild(tableWrapper);
       }
 
-      // Tombol Navigasi Bawah
+      // Prev / Next button states
       const btnPrev = document.getElementById('btnPrevQuestion');
-      const btnNext = document.getElementById('btnNextQuestion');
-
-      btnPrev.disabled = index === 0;
+      btnPrev.disabled = activeIndex === 0;
       btnPrev.className = `px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl border font-black text-xs sm:text-sm transition flex items-center gap-2 ${
-        index === 0 ? 'opacity-35 cursor-not-allowed border-slate-200 text-slate-400' : 'border-slate-300 hover:bg-slate-100 text-slate-700'
+        activeIndex === 0 ? 'opacity-40 cursor-not-allowed border-slate-200 text-slate-400' : 'border-slate-300 hover:bg-slate-100 text-slate-700'
       }`;
 
-      if (index === EXAM_QUESTIONS.length - 1) {
-        btnNext.innerHTML = `<span>Ke Soal No 1</span> <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>`;
-      } else {
-        btnNext.innerHTML = `<span>Berikutnya</span> <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>`;
-      }
-
-      updateAllGridStatus();
-    }
-
-    function renderStandardOptions(q, container) {
-      const selectedArr = studentAnswers[q.id] || [];
-      const inputType = q.type === 'complex' ? 'checkbox' : 'radio';
-
-      if (q.type === 'complex') {
-        const note = document.createElement('div');
-        note.className = "text-xs font-extrabold text-purple-700 bg-purple-50 p-2.5 rounded-xl border border-purple-200 flex items-center gap-1.5";
-        note.innerHTML = `<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Pilihan Ganda Kompleks: Centang semua jawaban yang benar (bisa lebih dari satu pilihan).`;
-        container.appendChild(note);
-      }
-
-      q.options.forEach(opt => {
-        const isSelected = selectedArr.includes(opt.key);
-        const label = document.createElement('label');
-        label.className = `flex items-start gap-3 p-3.5 sm:p-4 rounded-2xl border-2 transition cursor-pointer select-none ${
-          isSelected ? 'border-indigo-600 bg-indigo-50/70 shadow-sm ring-1 ring-indigo-500' : 'border-slate-200 hover:border-indigo-200 hover:bg-slate-50'
-        }`;
-
-        label.innerHTML = `
-          <div class="flex items-center h-6">
-            <input type="${inputType}" name="q_${q.id}" value="${opt.key}" ${isSelected ? 'checked' : ''}
-              class="w-4 h-4 text-indigo-600 focus:ring-indigo-500 border-slate-300 ${inputType === 'radio' ? 'rounded-full' : 'rounded-md'} cursor-pointer">
-          </div>
-          <div class="text-xs sm:text-sm font-medium text-slate-800 leading-normal flex-1">
-            <span class="inline-block w-6 font-black text-indigo-900">${opt.key}.</span>
-            ${escapeHtmlText(opt.text)}
-          </div>
-        `;
-
-        const input = label.querySelector('input');
-        input.addEventListener('change', () => {
-          if (inputType === 'radio') {
-            studentAnswers[q.id] = [opt.key];
-          } else {
-            if (!studentAnswers[q.id]) studentAnswers[q.id] = [];
-            const idx = studentAnswers[q.id].indexOf(opt.key);
-            if (idx > -1) {
-              studentAnswers[q.id].splice(idx, 1);
-            } else {
-              studentAnswers[q.id].push(opt.key);
-            }
-          }
-          displayQuestionByIndex(currentIndex);
-        });
-
-        container.appendChild(label);
-      });
-    }
-
-    function renderMatrixOptions(q, container) {
-      const currentObj = studentAnswers[q.id] || {};
-
-      const tableWrapper = document.createElement('div');
-      tableWrapper.className = "overflow-x-auto rounded-2xl border border-slate-200 shadow-xs bg-white";
-
-      let tableHtml = `
-        <table class="w-full text-left text-xs sm:text-sm">
-          <thead class="bg-slate-100 text-slate-700 uppercase font-black tracking-wider text-[11px] border-b border-slate-200">
-            <tr>
-              <th class="p-3 sm:p-4">Pernyataan Soal</th>
-              <th class="p-3 sm:p-4 text-center w-28">${q.matrixCols[0]}</th>
-              <th class="p-3 sm:p-4 text-center w-28">${q.matrixCols[1]}</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-slate-100 font-medium">
-      `;
-
-      q.matrixRows.forEach(row => {
-        const val = currentObj[row.id] || "";
-        tableHtml += `
-          <tr class="hover:bg-slate-50/80 transition">
-            <td class="p-3 sm:p-4 text-slate-800 leading-relaxed">${escapeHtmlText(row.text)}</td>
-            <td class="p-3 sm:p-4 text-center bg-slate-50/40">
-              <label class="cursor-pointer inline-flex items-center justify-center p-2 rounded-lg hover:bg-indigo-50">
-                <input type="radio" name="matrix_${q.id}_${row.id}" value="${q.matrixCols[0]}" ${val === q.matrixCols[0] ? 'checked' : ''}
-                  data-row="${row.id}" data-col="${q.matrixCols[0]}"
-                  class="w-4 h-4 text-indigo-600 focus:ring-indigo-500 border-slate-300">
-              </label>
-            </td>
-            <td class="p-3 sm:p-4 text-center bg-slate-50/40">
-              <label class="cursor-pointer inline-flex items-center justify-center p-2 rounded-lg hover:bg-indigo-50">
-                <input type="radio" name="matrix_${q.id}_${row.id}" value="${q.matrixCols[1]}" ${val === q.matrixCols[1] ? 'checked' : ''}
-                  data-row="${row.id}" data-col="${q.matrixCols[1]}"
-                  class="w-4 h-4 text-indigo-600 focus:ring-indigo-500 border-slate-300">
-              </label>
-            </td>
-          </tr>
-        `;
-      });
-
-      tableHtml += `</tbody></table>`;
-      tableWrapper.innerHTML = tableHtml;
-
-      // Event listener radio matrix
-      const radios = tableWrapper.querySelectorAll('input[type="radio"]');
-      radios.forEach(radio => {
-        radio.addEventListener('change', (e) => {
-          const rowId = e.target.getAttribute('data-row');
-          const colVal = e.target.getAttribute('data-col');
-          if (!studentAnswers[q.id]) studentAnswers[q.id] = {};
-          studentAnswers[q.id][rowId] = colVal;
-          updateAllGridStatus();
-        });
-      });
-
-      container.appendChild(tableWrapper);
+      refreshPaletteHighlight();
     }
 
     document.getElementById('btnToggleDoubt').addEventListener('click', () => {
-      const q = EXAM_QUESTIONS[currentIndex];
+      const q = EXAM_QUESTIONS[activeIndex];
       if (!q) return;
-      studentDoubts[q.id] = !studentDoubts[q.id];
-      displayQuestionByIndex(currentIndex);
+      doubtFlags[q.id] = !doubtFlags[q.id];
+      saveExamSessionBackup();
+      renderActiveQuestion();
     });
 
     document.getElementById('btnPrevQuestion').addEventListener('click', () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-        displayQuestionByIndex(currentIndex);
+      if (activeIndex > 0) {
+        activeIndex--;
+        renderActiveQuestion();
       }
     });
 
     document.getElementById('btnNextQuestion').addEventListener('click', () => {
-      if (currentIndex < EXAM_QUESTIONS.length - 1) {
-        currentIndex++;
+      if (activeIndex < EXAM_QUESTIONS.length - 1) {
+        activeIndex++;
       } else {
-        currentIndex = 0;
+        activeIndex = 0;
       }
-      displayQuestionByIndex(currentIndex);
+      renderActiveQuestion();
     });
 
-    // Modal Konfirmasi Pengiriman Ujian
     document.getElementById('btnConfirmFinish').addEventListener('click', () => {
       let count = 0;
       EXAM_QUESTIONS.forEach(q => {
@@ -1665,7 +1628,7 @@ function doPost(e) {
       });
 
       document.getElementById('confirmSummaryText').textContent = 
-        `Anda telah menjawab ${count} dari ${EXAM_QUESTIONS.length} butir soal. Apakah Anda yakin ingin mengakhiri dan mengirim asesmen ini sekarang?`;
+        `Anda telah menjawab ${count} dari 40 butir soal. Apakah Anda yakin ingin mengirim lembar jawaban sekarang?`;
       document.getElementById('modalConfirmSubmit').classList.remove('hidden');
     });
 
@@ -1675,46 +1638,48 @@ function doPost(e) {
 
     document.getElementById('btnExecuteSubmit').addEventListener('click', () => {
       document.getElementById('modalConfirmSubmit').classList.add('hidden');
-      submitFinalExam();
+      finishAndEvaluateExam();
     });
 
-    function submitFinalExam() {
-      if (isExamSubmitted) return;
-      isExamSubmitted = true;
-      isExamRunning = false;
-      clearInterval(timerTimerId);
+    function finishAndEvaluateExam() {
+      if (isExamFinished) return;
+      isExamFinished = true;
+      isExamActive = false;
+      clearInterval(timerCountdown);
+      stopContinuousSiren();
+      try { sessionStorage.removeItem('cbt_asts_ix_session'); } catch (e) {}
 
-      // Hitung Total Jawaban Benar (1 Poin per Soal Benar)
+      // Hitung Jawaban Benar
       let totalCorrect = 0;
 
       EXAM_QUESTIONS.forEach(q => {
-        const student = studentAnswers[q.id];
-        if (!student) return;
+        const ans = userAnswers[q.id];
+        if (!ans) return;
 
-        if (q.type === 'single' || q.type === 'complex') {
-          const sArr = (student || []).slice().sort();
-          const cArr = (q.correct || []).slice().sort();
-          if (sArr.length === cArr.length && sArr.every((v, i) => v === cArr[i])) {
+        if (q.type === 'single') {
+          if (Array.isArray(ans) && ans[0] === q.correct[0]) {
             totalCorrect++;
           }
-        } else if (q.type === 'matrix') {
-          // Harus cocok semua baris
-          let isMatrixAllMatch = true;
-          q.matrixRows.forEach(row => {
-            if (student[row.id] !== q.correct[row.id]) {
-              isMatrixAllMatch = false;
+        } else if (q.type === 'complex') {
+          if (Array.isArray(ans)) {
+            const sortedAns = ans.slice().sort();
+            const sortedCor = q.correct.slice().sort();
+            if (sortedAns.length === sortedCor.length && sortedAns.every((v, i) => v === sortedCor[i])) {
+              totalCorrect++;
             }
-          });
-          if (isMatrixAllMatch) {
+          }
+        } else if (q.type === 'matrix') {
+          const rowKeys = Object.keys(q.correct);
+          const allMatch = rowKeys.every(rKey => ans[rKey] === q.correct[rKey]);
+          if (allMatch) {
             totalCorrect++;
           }
         }
       });
 
-      // Konversi Nilai Skala 100: (Benar / 40) * 100
-      const finalScoreScaled = ((totalCorrect / EXAM_QUESTIONS.length) * 100).toFixed(1);
+      const finalGrade = ((totalCorrect / 40) * 100).toFixed(1);
 
-      // Tampilkan Hasil di Layar Selesai
+      // Tampilkan Hasil
       document.getElementById('sectionExamArena').classList.remove('grid');
       document.getElementById('sectionExamArena').classList.add('hidden');
       document.getElementById('sectionExamResult').classList.remove('hidden');
@@ -1724,176 +1689,203 @@ function doPost(e) {
       document.getElementById('resStudentAbsen').textContent = studentData.absen;
 
       document.getElementById('resScoreCorrect').textContent = totalCorrect;
-      document.getElementById('resFinalScore').textContent = finalScoreScaled;
+      document.getElementById('resFinalScore').textContent = finalGrade;
 
-      // Status Kejujuran
       const honestyTag = document.getElementById('resHonestyTag');
-      if (violationCounter === 0) {
+      if (countViolations === 0) {
         honestyTag.className = "text-xs font-black px-3 py-1.5 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 inline-block mt-1";
-        honestyTag.textContent = "0 Pelanggaran (Sangat Jujur & Tertib)";
+        honestyTag.textContent = "0 Pelanggaran (Sangat Jujur)";
       } else {
         honestyTag.className = "text-xs font-black px-3 py-1.5 rounded-lg bg-rose-500/20 text-rose-300 border border-rose-500/30 inline-block mt-1";
-        honestyTag.textContent = `Tercatat ${violationCounter}x Pelanggaran Keluar Tab`;
+        honestyTag.textContent = `Tercatat ${countViolations}x Keluar Layar`;
       }
 
-      // Kirim Data Nilai & Riwayat Pelanggaran ke Google Sheets
-      transmitResultsToGoogleSheet({
+      // Sinkronkan ke Google Spreadsheet
+      syncToGoogleSpreadsheet({
         name: studentData.name,
         studentClass: studentData.studentClass,
         absen: studentData.absen,
         school: studentData.school,
         scoreCorrect: totalCorrect,
-        finalScore: finalScoreScaled,
-        violationCount: violationCounter,
-        violationDetails: violationHistory.join(" || ") || "Tertib tanpa pelanggaran"
+        finalScore: finalGrade,
+        violationCount: countViolations,
+        violationDetails: logsViolations.join(" | ") || "Tidak ada catatan pelanggaran (Tertib)"
       });
 
-      // Siapkan File Unduhan CSV
-      prepareCSVExport(totalCorrect, finalScoreScaled);
+      prepareCSVDownload(totalCorrect, finalGrade);
     }
 
-    async function transmitResultsToGoogleSheet(payload) {
-      const statusText = document.getElementById('syncStatusText');
-      const statusBox = document.getElementById('syncStatusBox');
+    async function syncToGoogleSpreadsheet(payload) {
+      const syncText = document.getElementById('syncStatusText');
+      const syncBox = document.getElementById('syncStatusBox');
 
-      if (!targetSheetWebhook) {
-        statusText.textContent = "Nilai tersimpan di gawai (URL Google Sheet belum dikonfigurasi).";
+      if (!webhookSheetUrl) {
+        syncText.textContent = "Data ujian tersimpan lokal di perangkat ini (URL Sheet belum diisi).";
         return;
       }
 
-      statusText.innerHTML = `<span class="inline-block animate-spin mr-1.5">⏳</span> Mengirim nilai dan catatan kejujuran ke Google Sheet Pengawas...`;
+      syncText.innerHTML = `<span class="inline-block animate-spin mr-1.5">⏳</span> Mengirim data asesmen ke Google Sheet Pengawas...`;
 
       try {
-        await fetch(targetSheetWebhook, {
+        await fetch(webhookSheetUrl, {
           method: "POST",
           mode: "no-cors",
-          headers: {
-            "Content-Type": "text/plain;charset=utf-8"
-          },
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
           body: JSON.stringify(payload)
         });
 
-        statusText.innerHTML = "✓ <strong>Berhasil Dikirim!</strong> Nilai dan catatan kejujuran telah tersinkronisasi ke Spreadsheet Guru.";
-        if (statusBox) {
-          statusBox.className = "p-3.5 bg-emerald-50 rounded-2xl text-xs text-emerald-800 border border-emerald-200 flex items-center justify-center gap-2 font-semibold";
-        }
+        syncText.innerHTML = "✓ <strong>Berhasil Dikirim!</strong> Nilai dan riwayat ujian telah tercatat di Google Sheet Pengawas.";
+        syncBox.className = "p-3.5 bg-emerald-50 rounded-2xl text-xs text-emerald-900 border border-emerald-300 flex items-center justify-center gap-2 font-medium";
       } catch (err) {
-        console.error("Gagal sinkronisasi:", err);
-        statusText.innerHTML = "Koneksi cloud terhambat jaringan. Silakan klik <strong>Unduh Rekap Nilai (.CSV)</strong> sebagai bukti penilaian.";
-        if (statusBox) {
-          statusBox.className = "p-3.5 bg-amber-50 rounded-2xl text-xs text-amber-800 border border-amber-200 flex items-center justify-center gap-2 font-semibold";
-        }
+        console.warn("Gagal kirim sheet:", err);
+        syncText.innerHTML = "Sinkronisasi otomatis cloud terhambat sinyal. Silakan klik <strong>Unduh Rekap Nilai (.CSV)</strong>.";
+        syncBox.className = "p-3.5 bg-amber-50 rounded-2xl text-xs text-amber-900 border border-amber-300 flex items-center justify-center gap-2 font-medium";
       }
     }
 
-    function prepareCSVExport(correctCount, finalGrade) {
+    function prepareCSVDownload(correctCount, finalGrade) {
       const btn = document.getElementById('btnDownloadCSV');
       btn.onclick = () => {
         let csv = "data:text/csv;charset=utf-8,";
-        csv += "Nama Lengkap,Kelas,Nomor Absen,Sekolah,Total Benar (Dari 40),Nilai (Skala 100),Total Pelanggaran,Waktu Selesai\n";
-        csv += `"${studentData.name}","${studentData.studentClass}","${studentData.absen}","${studentData.school}",${correctCount},${finalGrade},${violationCounter},"${new Date().toLocaleString('id-ID')}"\n\n`;
+        csv += "Nama Lengkap,Kelas,Nomor Absen,Asal Sekolah,Total Benar (Dari 40),Nilai Akhir (Skala 100),Total Pelanggaran,Waktu Selesai\n";
+        csv += `"${studentData.name}","${studentData.studentClass}","${studentData.absen}","${studentData.school}",${correctCount},${finalGrade},${countViolations},"${new Date().toLocaleString('id-ID')}"\n\n`;
 
-        csv += "Nomor Soal,Bagian Materi,Tipe Soal,Jawaban Siswa,Kunci Jawaban,Hasil\n";
+        csv += "No,Bagian Materi,Tipe Soal,Jawaban Siswa,Kunci Jawaban,Status\n";
         EXAM_QUESTIONS.forEach(q => {
-          let ansText = "";
-          let keyText = "";
-          let statusText = "SALAH";
+          let ansStr = "KOSONG";
+          let corStr = "";
+          let isCorrect = false;
 
-          if (q.type === 'single' || q.type === 'complex') {
-            ansText = (studentAnswers[q.id] || []).join("-") || "KOSONG";
-            keyText = (q.correct || []).join("-");
-            if (ansText === keyText) statusText = "BENAR";
+          if (q.type === 'single') {
+            ansStr = (userAnswers[q.id] || [])[0] || "KOSONG";
+            corStr = q.correct[0];
+            isCorrect = ansStr === corStr;
+          } else if (q.type === 'complex') {
+            const arr = userAnswers[q.id] || [];
+            ansStr = arr.join("-") || "KOSONG";
+            corStr = q.correct.join("-");
+            isCorrect = arr.slice().sort().join("-") === q.correct.slice().sort().join("-");
           } else if (q.type === 'matrix') {
-            const ansObj = studentAnswers[q.id] || {};
-            const userArr = q.matrixRows.map(r => `${r.id}:${ansObj[r.id] || '?'}`);
-            const keyArr = q.matrixRows.map(r => `${r.id}:${q.correct[r.id]}`);
-            ansText = userArr.join("; ");
-            keyText = keyArr.join("; ");
-            if (userArr.join("") === keyArr.join("")) statusText = "BENAR";
+            const ansObj = userAnswers[q.id] || {};
+            ansStr = Object.entries(ansObj).map(([k, v]) => `${k}:${v}`).join("; ") || "KOSONG";
+            corStr = Object.entries(q.correct).map(([k, v]) => `${k}:${v}`).join("; ");
+            isCorrect = Object.keys(q.correct).every(k => ansObj[k] === q.correct[k]);
           }
 
-          csv += `${q.id},"${q.part}","${q.type}","${ansText}","${keyText}","${statusText}"\n`;
+          csv += `${q.id},"${q.part}","${q.type}","${ansStr}","${corStr}","${isCorrect ? 'BENAR' : 'SALAH'}"\n`;
         });
 
         const encoded = encodeURI(csv);
-        const a = document.createElement('a');
-        a.setAttribute('href', encoded);
-        a.setAttribute('download', `HASIL_ASTS_KELAS_IX_${studentData.studentClass}_ABSEN_${studentData.absen}_${studentData.name.replace(/\s+/g, '_')}.csv`);
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
+        const link = document.createElement("a");
+        link.setAttribute("href", encoded);
+        link.setAttribute("download", `ASTS_KELAS_IX_${studentData.studentClass}_ABSEN_${studentData.absen}_${studentData.name.replace(/\s+/g, '_')}.csv`);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
       };
     }
 
+    // Modal & Dismiss Alarm
+    document.getElementById('btnDismissViolation').addEventListener('click', () => {
+      document.getElementById('modalViolation').classList.add('hidden');
+      stopContinuousSiren();
+      lockFullscreen();
+    });
+
+    // Pengaturan Guru & GS Script Modal
+    const teacherModal = document.getElementById('modalTeacherConfig');
     document.getElementById('btnOpenTeacherSettings').addEventListener('click', () => {
-      document.getElementById('modalTeacherConfig').classList.remove('hidden');
-      document.getElementById('inputWebhookUrl').value = targetSheetWebhook;
+      teacherModal.classList.remove('hidden');
+      document.getElementById('inputWebhookUrl').value = webhookSheetUrl;
     });
 
     document.getElementById('btnOpenSheetModal').addEventListener('click', () => {
-      document.getElementById('modalTeacherConfig').classList.remove('hidden');
-      document.getElementById('inputWebhookUrl').value = targetSheetWebhook;
-      const codeBox = document.getElementById('appsScriptCode');
-      if (codeBox) {
-        codeBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        codeBox.classList.add('ring-4', 'ring-amber-400');
-        setTimeout(() => codeBox.classList.remove('ring-4', 'ring-amber-400'), 1500);
-      }
+      teacherModal.classList.remove('hidden');
+      document.getElementById('inputWebhookUrl').value = webhookSheetUrl;
     });
 
     document.getElementById('btnCloseTeacherConfig').addEventListener('click', () => {
-      document.getElementById('modalTeacherConfig').classList.add('hidden');
+      teacherModal.classList.add('hidden');
     });
 
     document.getElementById('btnSaveConfig').addEventListener('click', () => {
-      const val = document.getElementById('inputWebhookUrl').value.trim();
-      targetSheetWebhook = val;
-
-      const alertEl = document.getElementById('labelSaveAlert');
-      alertEl.classList.remove('hidden');
+      webhookSheetUrl = document.getElementById('inputWebhookUrl').value.trim();
+      const alertLabel = document.getElementById('labelSaveAlert');
+      alertLabel.classList.remove('hidden');
       setTimeout(() => {
-        alertEl.classList.add('hidden');
-        document.getElementById('modalTeacherConfig').classList.add('hidden');
+        alertLabel.classList.add('hidden');
+        teacherModal.classList.add('hidden');
       }, 1200);
     });
 
     document.getElementById('btnCopyScript').addEventListener('click', () => {
-      const ta = document.getElementById('appsScriptCode');
-      ta.select();
+      const codeArea = document.getElementById('appsScriptCode');
+      codeArea.select();
       document.execCommand('copy');
 
-      const btn = document.getElementById('btnCopyScript');
-      const orig = btn.textContent;
-      btn.textContent = "Tersalin!";
-      setTimeout(() => btn.textContent = orig, 1800);
+      const copyBtn = document.getElementById('btnCopyScript');
+      const origText = copyBtn.textContent;
+      copyBtn.textContent = "Berhasil Disalin!";
+      setTimeout(() => {
+        copyBtn.textContent = origText;
+      }, 2000);
     });
 
-    // Dismiss Peringatan Pelanggaran
-    document.getElementById('btnDismissViolation').addEventListener('click', () => {
-      stopContinuousSiren();
-      document.getElementById('modalViolation').classList.add('hidden');
-      lockToFullscreen();
-    });
-
-    function escapeHtmlText(str) {
-      if (!str) return "";
-      const map = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#039;'
-      };
-      return str.replace(/[&<>"']/g, m => map[m]);
+    function escapeHtml(text) {
+      if (!text) return "";
+      return String(text)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
     }
 
-    function displayToastNotice(message) {
+    function showFloatingToast(msg) {
       const toast = document.createElement('div');
-      toast.className = "fixed bottom-5 right-5 z-50 bg-slate-900 text-white px-5 py-3.5 rounded-2xl shadow-2xl text-xs sm:text-sm font-black border border-slate-700 flex items-center gap-2.5 animate-bounce-short";
-      toast.innerHTML = `<svg class="w-5 h-5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg> <span>${message}</span>`;
+      toast.className = "fixed bottom-5 right-5 z-50 bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-2xl text-xs sm:text-sm font-bold border border-slate-700 flex items-center gap-2";
+      toast.innerHTML = `<svg class="w-5 h-5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> <span>${msg}</span>`;
       document.body.appendChild(toast);
       setTimeout(() => toast.remove(), 3500);
     }
+
+    window.addEventListener('load', () => {
+      try {
+        const raw = sessionStorage.getItem('cbt_asts_ix_session');
+        if (raw) {
+          const backup = JSON.parse(raw);
+          if (backup && backup.studentData && backup.studentData.name) {
+            studentData = backup.studentData;
+            userAnswers = backup.userAnswers || {};
+            doubtFlags = backup.doubtFlags || {};
+            activeIndex = backup.activeIndex || 0;
+            timerDuration = backup.timerDuration || 3900;
+            countViolations = backup.countViolations || 0;
+            logsViolations = backup.logsViolations || [];
+
+            document.getElementById('sideStudentName').textContent = studentData.name;
+            document.getElementById('sideStudentClass').textContent = studentData.studentClass;
+            document.getElementById('sideStudentAbsen').textContent = studentData.absen;
+
+            document.getElementById('sectionRegistration').classList.add('hidden');
+            const arena = document.getElementById('sectionExamArena');
+            arena.classList.remove('hidden');
+            arena.classList.add('grid');
+
+            document.getElementById('badgeHonestyStatus').classList.remove('hidden');
+            document.getElementById('badgeHonestyStatus').classList.add('flex');
+
+            isExamActive = true;
+            generateQuestionPalette();
+            renderActiveQuestion();
+            startCountdownTimer();
+            showFloatingToast("Sesi ujian Anda berhasil dipulihkan secara otomatis!");
+          }
+        }
+      } catch (err) {
+        console.warn("Session restore error:", err);
+      }
+    });
   </script>
 </body>
 </html>
